@@ -1,27 +1,46 @@
 const Projects = () => {
   return (
-    <section className="bg-white py-12 px-4">
-      <h2 className="text-3xl font-bold text-center text-gray-800 mb-10">Projects</h2>
+    <section className="min-h-screen bg-white text-black py-20 px-6 flex flex-col justify-center items-center relative overflow-hidden">
+      
+      {/* Background blur */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-black rounded-full filter blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gray-900 rounded-full filter blur-3xl"></div>
+      </div>
 
-      <div className="flex flex-wrap justify-center gap-10">
+      {/* Section Title */}
+      <h2 className="text-4xl font-light tracking-wide mb-16 z-10">Projects</h2>
 
-        <div className="max-w-sm p-6 bg-gray-100 rounded-lg shadow">
-          <h3 className="text-xl font-semibold mb-2">DAB</h3>
-          <p className="mb-2 text-gray-700">Digital Art Repository</p>
-          <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
+      {/* Projects Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 z-10 w-full max-w-5xl">
+
+        {/* Project 1 */}
+        <div className="border border-gray-400 p-6 hover:shadow-xl transition duration-300 ease-in-out">
+          <h3 className="text-2xl font-medium mb-2">Software Development</h3>
+          <p className="text-sm text-gray-500 mb-4">Digital Art Repository</p>
+          <ul className="text-sm font-light text-gray-700 space-y-1">
             <li>HTML, CSS, JS, Python</li>
             <li>Django, MySQL</li>
-            <li><a href="#" className="text-blue-500 hover:underline">GitHub Link / Live Demo</a></li>
+            <li>
+              <a href="#" className="text-black underline hover:text-gray-800 transition">
+                GitHub Link / Live Demo
+              </a>
+            </li>
           </ul>
         </div>
 
-        <div className="max-w-sm p-6 bg-gray-100 rounded-lg shadow">
-          <h3 className="text-xl font-semibold mb-2">The Checkmate</h3>
-          <p className="mb-2 text-gray-700">Mic Check Podcast</p>
-          <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
-            <li>CapCut</li>
-            <li>Graphics</li>
-            <li><a href="#" className="text-blue-500 hover:underline">View Project</a></li>
+        {/* Project 2 */}
+        <div className="border border-gray-400 p-6 hover:shadow-xl transition duration-300 ease-in-out">
+          <h3 className="text-2xl font-medium mb-2">Visual Arts</h3>
+          <p className="text-sm text-gray-500 mb-4">The CheckMate : Mic Cheque Podcast</p>
+          <ul className="text-sm font-light text-gray-700 space-y-1">
+            <li>Painting</li>
+            <li>2025</li>
+            <li>
+              <a href="#" className="text-black underline hover:text-gray-800 transition">
+                View Artwork
+              </a>
+            </li>
           </ul>
         </div>
 
