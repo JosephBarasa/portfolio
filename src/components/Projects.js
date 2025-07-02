@@ -56,6 +56,7 @@ const Projects = () => {
 
       {/* practice section */}
 
+    {/* 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 p-6 bg-white text-black">
         {artworks.map((artwork) => (
           <div key={artwork.id} className="border border-black p-6 hover:bg-black hover:text-white transition-colors duration-300">
@@ -63,7 +64,8 @@ const Projects = () => {
             <p className="text-sm text-gray-600">{artwork.media}</p>
           </div>
         ))}
-    </div>
+      </div>
+    */}
 
 
     </section>
