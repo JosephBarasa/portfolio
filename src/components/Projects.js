@@ -1,6 +1,14 @@
+import { useState } from 'react';
+
 const Projects = () => {
+
+  const [artworks, setArt] = useState([
+    { title: 'Fyah Mummah', media: 'Pencil', id: 1 },
+    { title: 'Octopizzo', media: 'Pencil', id: 2 }
+  ]);
+
   return (
-    <section className="min-h-screen bg-white text-black py-20 px-6 flex flex-col justify-center items-center relative overflow-hidden">
+    <section className="min-h-fit bg-white text-black py-20 px-6 flex flex-col justify-center items-center relative overflow-hidden">
       
       {/* Background blur */}
       <div className="absolute inset-0 opacity-5">
@@ -9,7 +17,7 @@ const Projects = () => {
       </div>
 
       {/* Section Title */}
-      <h2 className="text-4xl font-light tracking-wide mb-16 z-10">Projects</h2>
+      <h2 className="text-3xl font-light tracking-wide mb-16 z-10">Project Catalogue</h2>
 
       {/* Projects Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 z-10 w-full max-w-5xl">
@@ -45,6 +53,19 @@ const Projects = () => {
         </div>
 
       </div>
+
+      {/* practice section */}
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 p-6 bg-white text-black">
+        {artworks.map((artwork) => (
+          <div key={artwork.id} className="border border-black p-6 hover:bg-black hover:text-white transition-colors duration-300">
+            <h2 className="text-2xl font-semibold mb-2">{artwork.title}</h2>
+            <p className="text-sm text-gray-600">{artwork.media}</p>
+          </div>
+        ))}
+    </div>
+
+
     </section>
   );
 };

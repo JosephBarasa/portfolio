@@ -9,19 +9,6 @@ const Home = () => {
 
   const [message, setMessage] = useState('');
 
-  const handleClick = (type) => {
-    if (type === 'view') {
-      setMessage('The portfolio section is still in production');
-    } else if (type === 'contact') {
-      setMessage('The portfolio section is still in production');
-    }
-
-    // clear the message after 3 seconds
-    setTimeout(() => {
-      setMessage('');
-    }, 3000);
-  };
-
   const contactMe = () => {
     setContact('Sorry, we are not taking message requests at the moment')
   };
@@ -68,11 +55,7 @@ const Home = () => {
         </div>
 
         {/* Clean buttons */}
-        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mt-16">
-          <button onClick={() => handleClick('view')} className="px-8 py-3 bg-black text-white font-light tracking-wide hover:bg-gray-800 transition-colors duration-300">
-            View My Catalogue
-          </button>
-          
+        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mt-16">         
           <button onClick={() => contactMe()} className="px-8 py-3 border border-black text-black font-light tracking-wide hover:bg-black hover:text-white transition-all duration-300">
             Contact Me
           </button>
@@ -80,9 +63,9 @@ const Home = () => {
 
         {/* Minimal social indicators */}
         <div className="flex justify-center space-x-8 mt-12">
-          <div className="w-8 h-8 border border-gray-300 hover:border-black transition-colors duration-300 cursor-pointer"></div>
+          <div className="w-8 h-8 border border-gray-400 hover:border-black transition-colors duration-300 cursor-pointer"></div>
           <div className="w-8 h-8 bg-black hover:bg-gray-800 transition-colors duration-300 cursor-pointer"></div>
-          <div className="w-8 h-8 border border-gray-300 hover:border-black transition-colors duration-300 cursor-pointer"></div>
+          <div className="w-8 h-8 border border-gray-400 hover:border-black transition-colors duration-300 cursor-pointer"></div>
         </div>
       </div>
     </section>
