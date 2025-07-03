@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import Artworks from './Artworks';
 
 const Projects = () => {
 
   const [artworks, setArt] = useState([
     { title: 'Fyah Mummah', media: 'Pencil', id: 1 },
-    { title: 'Octopizzo', media: 'Pencil', id: 2 }
+    { title: 'Octopizzo', media: 'Pencil', id: 2 },
+    { title: 'The Check.Mate', media: 'Oil', id: 3 }
   ]);
 
   return (
@@ -54,21 +56,13 @@ const Projects = () => {
 
       </div>
 
-      {/* practice section */}
-
-    {/* 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 p-6 bg-white text-black">
-        {artworks.map((artwork) => (
-          <div key={artwork.id} className="border border-black p-6 hover:bg-black hover:text-white transition-colors duration-300">
-            <h2 className="text-2xl font-semibold mb-2">{artwork.title}</h2>
-            <p className="text-sm text-gray-600">{artwork.media}</p>
-          </div>
-        ))}
+        <Artworks artworks={artworks} title='All Artworks'/>
+        <Artworks artworks={artworks.filter((artworks) => artworks.media === 'Oil' )} title='Paintings'/>
       </div>
-    */}
-
 
     </section>
+
   );
 };
 
