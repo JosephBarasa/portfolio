@@ -1,12 +1,12 @@
 
 const Navbar = () => {
   return (
-    <nav className="bg-white text-black sticky top-0 z-50 shadow-sm border-b border-gray-200">
+    <nav className="bg-gray-300 text-black sticky top-0 z-50 shadow-sm border-b border-gray-500">
       <div className="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
         
         {/* Logo */}
         <div>
-          <span className="text-2xl font-light tracking-wide">GIFT.ED</span>
+          <span className="text-1xl font-light tracking-wide">GIFT.ED</span>
         </div>
 
         {/* Navigation Links */}

@@ -1,0 +1,27 @@
+{
+    "softwareDev": [
+        {
+            "title": "Digital Art Repository",
+            "technologies": "HTML, CSS, JS, Python, Django, MSQL",
+            "github link": "GithubLink",
+            "id": 1
+        }
+    ],
+
+    "visualArts": [
+        {
+            "title": "The Check.Mate",
+            "category": "Painting",
+            "description": "Mic Cheque Podcast",
+            "media": "Oil on canvas",
+            "id": 1
+        },
+
+        {
+            "title": "The Hustle",
+            "category": "Video Edit",
+            "description": "June 25th",
+            "id": 2
+        }
+    ]
+}
