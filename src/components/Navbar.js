@@ -12,7 +12,6 @@ const Navbar = () => {
         {/* Navigation Links */}
         <div className="space-x-8">
           <a href="#home" className="hover:text-gray-600 transition font-light tracking-wide">Home</a>
-          <a href="#projects" className="hover:text-gray-600 transition font-light tracking-wide">Projects</a>
         </div>
         
       </div>

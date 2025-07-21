@@ -3,8 +3,15 @@
         {
             "title": "Digital Art Repository",
             "technologies": "HTML, CSS, JS, Python, Django, MSQL",
-            "github link": "GithubLink",
+            "githubLink": "GithubLink",
             "id": 1
+        },
+
+        {
+            "title": "Portfolio",
+            "technologies": "React, JS, JSON",
+            "githubLink": "GithubLink",
+            "id": 2
         }
     ],
 

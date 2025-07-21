@@ -1,24 +1,97 @@
-import { useState } from 'react';
+import React, { useState } from 'react'; 
 
-const SoftwareDev = () => {
+const SoftwareDev = ({ softwareDev }) => {
+  // State to keep track of the current project's index
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Add a check for empty softwareDev array to prevent crashes
+  if (!softwareDev || softwareDev.length === 0) {
+    return (
+      <div className="min-h-[120px] flex items-center justify-center text-gray-500 text-sm">
+        No software projects to display.
+      </div>
+    );
+  }
+
+  // Get the total number of projects
+  const totalProjects = softwareDev.length;
+
+  // Get the project object that should be currently displayed
+  const currentProject = softwareDev[currentIndex];
+
+  // Function to go to the next project
+  const goToNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % totalProjects);
+  };
+
+  // Function to go to the previous project
+  const goToPrevious = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + totalProjects) % totalProjects);
+  };
 
   return (
-    <div className="space-y-8 bg-gray-200">
+    // Outer container: Retaining existing styles
+    <div className="space-y-4 pt-1 pb-3">
+      {/* Display the current project's details - replaces the .map() */}
+      <div
+        key={currentProject.id} // Use key on the currently displayed project
+        className="px-1 py-3" // Retaining existing styles
+      >
+        {/* Project Title: Retaining existing styles */}
+        <h3 className="text-xl font-light mb-1 text-gray-900 leading-tight">
+          {currentProject.title}
+        </h3>
 
-      <div className="p-4 border border-gray-200 rounded-md hover:shadow-md transition duration-300 ease-in-out">
-        <h3 className="text-xl font-semibold mb-2 text-gray-800">Digital Art Repository</h3>
-        <p className="text-sm text-gray-600 mb-3">Technologies used:</p>
-        <ul className="text-sm font-light text-gray-700 space-y-1">
-          <li>HTML, CSS, JS, Python</li>
-          <li>Django, MySQL</li>
-          <li>
-            <a href="#" className="text-blue-600 underline hover:text-blue-800 transition">
+        {/* Technologies used label: Retaining existing styles */}
+        <p className="text-sm text-gray-700 mb-2 font-light">Technologies used:</p>
+
+        {/* Technologies List: Retaining existing styles */}
+        <ul className="text-sm font-light text-gray-800 space-y-0.5">
+          <li>{currentProject.technologies}</li>
+          <li className="pt-1">
+            {/* GitHub Link: Retaining existing styles */}
+            <a
+              href={currentProject["github link"] || "#"} // Use currentProject
+              className="text-blue-700 underline hover:text-blue-900 transition font-normal text-sm"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               GitHub Link / Live Demo
             </a>
           </li>
         </ul>
       </div>
 
+      {/* Navigation Buttons (Copied directly from VisualArts component) */}
+      {totalProjects > 1 && ( // Only show buttons if there's more than one project
+        <div className="flex justify-center items-center gap-6 mt-4">
+          <button
+            onClick={goToPrevious}
+            className="p-2 text-gray-600 hover:text-black transition focus:outline-none focus:ring-2 focus:ring-gray-300 rounded-full"
+            aria-label="Previous Project"
+          >
+            {/* Left Arrow Icon */}
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          <span className="text-base text-gray-700 font-light">
+            {currentIndex + 1} / {totalProjects}
+          </span>
+
+          <button
+            onClick={goToNext}
+            className="p-2 text-gray-600 hover:text-black transition focus:outline-none focus:ring-2 focus:ring-gray-300 rounded-full"
+            aria-label="Next Project"
+          >
+            {/* Right Arrow Icon */}
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      )}
     </div>
   );
 };
