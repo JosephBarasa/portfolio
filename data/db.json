@@ -2,15 +2,15 @@
     "softwareDev": [
         {
             "title": "Digital Art Repository",
-            "technologies": "HTML, CSS, JS, Python, Django, MSQL",
-            "githubLink": "GithubLink",
+            "technologies": "JS, Python, Django, MSQL",
+            "githubLink": "https://github.com/JosephBarasa/Digital-Art-Repository-Main",
             "id": 1
         },
 
         {
             "title": "Portfolio",
-            "technologies": "React, JS, JSON",
-            "githubLink": "GithubLink",
+            "technologies": "React, JS",
+            "githubLink": "https://github.com/JosephBarasa/Portfolio",
             "id": 2
         }
     ],
@@ -29,6 +29,13 @@
             "category": "Video Edit",
             "description": "June 25th",
             "id": 2
+        },
+
+        {
+            "title": "Octopizzo",
+            "category": "Pencil Portrait",
+            "description": "Rags to Riches",
+            "id": 3
         }
     ]
 }

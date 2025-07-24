@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -11,7 +12,7 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <div className="space-x-8">
-          <a href="#home" className="hover:text-gray-600 transition font-light tracking-wide">Home</a>
+          <Link to="/" className="hover:text-gray-600 transition font-light tracking-wide">Home</Link>
         </div>
         
       </div>

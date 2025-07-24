@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import SoftwareDev from './SoftwareDev';
 import VisualArts from './VisualArts';
-import useFetch from '../hooks/useFetch.js';
+import useFetch from '../hooks/useFetch';
 
 const Home = () => {
 

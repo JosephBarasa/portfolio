@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const VisualArts = ({ visualArts }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -26,22 +27,17 @@ const VisualArts = ({ visualArts }) => {
     <div className="space-y-6 pt-1 pb-4">
 
       <div key={currentProject.id} className="px-2 py-4"> {/* Slight padding to content */}
-        <h3 className="text-2xl font-light mb-2 text-gray-900 leading-tight"> {/* Slightly larger, lighter title */}
+        <h3 className="text-2xl font-light mb-1 text-gray-900 leading-tight"> {/* Slightly larger, lighter title */}
           {currentProject.title}
         </h3>
-        <p className="text-base text-gray-700 mb-3 font-light">Project details:</p>
+        <p className="text-base text-gray-700 mb-1 font-light text-sm">Project details:</p>
         <ul className="text-base font-light text-gray-800 space-y-1"> {/* Increased text size */}
           <li>{currentProject.category}</li>
           <li>{currentProject.description}</li>
-          <li>{currentProject.media}</li>
           <li className="pt-2"> {/* Added padding to the link for separation */}
-            <a href="#" className="text-blue-700 underline hover:text-blue-900 transition font-normal"> {/* Slightly darker blue, normal font-weight */}
+            <Link to={`/view-art/${currentProject.id}`} className="text-blue-700 underline hover:text-blue-900 transition font-normal text-sm"> 
               View Artwork
-            </a>
-
-            <a href="#" className="text-blue-700 underline hover:text-blue-900 transition font-normal ml-12"> {/* Slightly darker blue, normal font-weight */}
-              All Projects
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

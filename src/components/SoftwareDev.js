@@ -51,12 +51,12 @@ const SoftwareDev = ({ softwareDev }) => {
           <li className="pt-1">
             {/* GitHub Link: Retaining existing styles */}
             <a
-              href={currentProject["github link"] || "#"} // Use currentProject
+              href={currentProject["githubLink"] || "#"} 
               className="text-blue-700 underline hover:text-blue-900 transition font-normal text-sm"
               target="_blank"
               rel="noopener noreferrer"
             >
-              GitHub Link / Live Demo
+              GitHub Link
             </a>
           </li>
         </ul>
