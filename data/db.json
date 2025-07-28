@@ -1,7 +1,7 @@
 {
     "softwareDev": [
         {
-            "title": "Digital Art Repository",
+            "title": "Art Repository",
             "technologies": "JS, Python, Django, MSQL",
             "githubLink": "https://github.com/JosephBarasa/Digital-Art-Repository-Main",
             "id": 1

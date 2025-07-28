@@ -1,4 +1,3 @@
-// src/hooks/useFetch.js (or useFetchGeneric.js if you prefer that filename)
 import { useEffect, useState } from 'react';
 
 const useFetchGeneric = (url) => { 

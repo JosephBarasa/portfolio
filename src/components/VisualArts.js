@@ -5,11 +5,12 @@ const VisualArts = ({ visualArts }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const totalProjects = visualArts.length;
 
-  // Added a check for empty visualArts array, though you wanted to avoid error handling.
-  // This just prevents a crash if visualArts is empty, returning an empty div.
-  // In a real app, you'd show a "No projects" message here.
   if (!visualArts || visualArts.length === 0) {
-    return <div className="min-h-[150px] flex items-center justify-center text-gray-500">No art projects to display.</div>;
+    return (
+      <div className="min-h-[150px] flex items-center justify-center text-gray-500">
+        No art projects to display.
+      </div>
+    );
   }
 
   const currentProject = visualArts[currentIndex];
@@ -24,18 +25,21 @@ const VisualArts = ({ visualArts }) => {
 
   return (
     // Outer container: Keep some padding, remove background color (let parent handle), reduce vertical space
-    <div className="space-y-6 pt-1 pb-4">
+    <div className="space-y-4 pt-1 pb-4"> {/* Changed space-y-6 to space-y-4 for consistency */}
 
-      <div key={currentProject.id} className="px-2 py-4"> {/* Slight padding to content */}
+      <div key={currentProject.id} className="px-2 py-4 text-center"> {/* Added text-center here */}
         <h3 className="text-2xl font-light mb-1 text-gray-900 leading-tight"> {/* Slightly larger, lighter title */}
           {currentProject.title}
         </h3>
-        <p className="text-base text-gray-700 mb-1 font-light text-sm">Project details:</p>
-        <ul className="text-base font-light text-gray-800 space-y-1"> {/* Increased text size */}
+        <p className="text-sm text-gray-600 mb-1 font-bold italic">Art details:</p> {/* Removed redundant text-sm */}
+        <ul className="text-base font-light text-gray-800 space-y-1 list-none p-0 flex flex-col items-center"> {/* Added list-none, p-0, flex, flex-col, items-center */}
           <li>{currentProject.category}</li>
           <li>{currentProject.description}</li>
           <li className="pt-2"> {/* Added padding to the link for separation */}
-            <Link to={`/view-art/${currentProject.id}`} className="text-blue-700 underline hover:text-blue-900 transition font-normal text-sm"> 
+            <Link 
+              to={`/view-art/${currentProject.id}`} 
+              className="text-gray-800 underline hover:text-black transition font-normal text-sm" // Restyled for theme consistency
+            > 
               View Artwork
             </Link>
           </li>
@@ -44,16 +48,16 @@ const VisualArts = ({ visualArts }) => {
 
       {/* Navigation Buttons */}
       {totalProjects > 1 && (
-        <div className="flex justify-center items-center gap-6 mt-4"> {/* Centered buttons, increased gap */}
+        <div className="flex justify-center items-center gap-1 mt-4"> {/* Reduced gap-6 to gap-1 for consistency */}
           <button
             onClick={goToPrevious}
-            className="p-2 text-gray-600 hover:text-black transition focus:outline-none focus:ring-2 focus:ring-gray-300 rounded-full" // Minimalist button
+            className="p-2 text-gray-600 hover:text-black transition focus:outline-none focus:ring-2 focus:ring-gray-300 rounded-full"
             aria-label="Previous Project"
           >
-             {/* Left Arrow Icon - using SVG for cleaner look */}
-             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-             </svg>
+            {/* Left Arrow Icon - using SVG for cleaner look */}
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
           </button>
 
           <span className="text-base text-gray-700 font-light"> {/* Slightly larger text */}
@@ -62,7 +66,7 @@ const VisualArts = ({ visualArts }) => {
 
           <button
             onClick={goToNext}
-            className="p-2 text-gray-600 hover:text-black transition focus:outline-none focus:ring-2 focus:ring-gray-300 rounded-full" // Minimalist button
+            className="p-2 text-gray-600 hover:text-black transition focus:outline-none focus:ring-2 focus:ring-gray-300 rounded-full"
             aria-label="Next Project"
           >
             {/* Right Arrow Icon */}
