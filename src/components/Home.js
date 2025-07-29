@@ -125,7 +125,7 @@ const Home = () => {
 
           {/* GitHub Icon */}
           <a
-            href="https://github.com/yourusername" // REPLACE WITH YOUR ACTUAL GITHUB URL
+            href="https://github.com/JosephBarasa" // REPLACE WITH YOUR ACTUAL GITHUB URL
             aria-label="GitHub"
             target="_blank"
             rel="noopener noreferrer"
@@ -152,12 +152,10 @@ const Home = () => {
       <hr className="w-full max-w-5xl border-t border-gray-700 my-20" />
 
       {/* About Me Component */}
-      <div>
-        <AboutMe />
-      </div>
+      <AboutMe />
 
       {/* horizontal line */}
-      <hr className="w-full max-w-5xl border-t border-gray-700 my-20" />
+      <hr className="w-full max-w-5xl border-t border-gray-700 my-10" />
 
       {/* ---------- Catalogue Section ---------- */}
 

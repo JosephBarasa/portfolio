@@ -1,41 +1,47 @@
 {
-    "softwareDev": [
-        {
-            "title": "Art Repository",
-            "technologies": "JS, Python, Django, MSQL",
-            "githubLink": "https://github.com/JosephBarasa/Digital-Art-Repository-Main",
-            "id": 1
-        },
-
-        {
-            "title": "Portfolio",
-            "technologies": "React, JS",
-            "githubLink": "https://github.com/JosephBarasa/Portfolio",
-            "id": 2
-        }
-    ],
-
-    "visualArts": [
-        {
-            "title": "The Check.Mate",
-            "category": "Painting",
-            "description": "Mic Cheque Podcast",
-            "media": "Oil on canvas",
-            "id": 1
-        },
-
-        {
-            "title": "The Hustle",
-            "category": "Video Edit",
-            "description": "June 25th",
-            "id": 2
-        },
-
-        {
-            "title": "Octopizzo",
-            "category": "Pencil Portrait",
-            "description": "Rags to Riches",
-            "id": 3
-        }
-    ]
+  "softwareDev": [
+    {
+      "title": "Art Repository",
+      "technologies": "JS, Python, Django, MSQL",
+      "githubLink": "https://github.com/JosephBarasa/Digital-Art-Repository-Main",
+      "id": 1
+    },
+    {
+      "title": "Portfolio",
+      "technologies": "React, JS",
+      "githubLink": "https://github.com/JosephBarasa/Portfolio",
+      "id": 2
+    }
+  ],
+  "visualArts": [
+    {
+      "title": "The Check.Mate",
+      "category": "Painting",
+      "description": "Mic Cheque Podcast",
+      "media": "Oil on canvas",
+      "id": 1,
+      "mediaUrls": [
+        "/media/the-checkmate-1.jpg",
+        "/media/the-checkmate-2.jpg"
+      ]
+    },
+    {
+      "title": "The Hustle",
+      "category": "Video Edit",
+      "description": "June 25th",
+      "id": 2,
+      "mediaUrls": [
+        "/media/the-hustle.mp4"
+      ]
+    },
+    {
+      "title": "Octopizzo",
+      "category": "Pencil Portrait",
+      "description": "Rags to Riches",
+      "id": 3,
+      "mediaUrls": [
+        "/art/WhatsApp Image 2025-07-29 at 12.11.22_30edca66.jpg"
+      ]
+    }
+  ]
 }
