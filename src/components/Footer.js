@@ -13,7 +13,7 @@ const Footer = () => {
       <div className="relative z-10 max-w-6xl mx-auto">
 
         {/* Top row: Social + Contact */}
-        <div className="flex justify-between items-center mb-6">
+        <div className="flex justify-between items-center">
           {/* Social Icons */}
           <div className="flex space-x-6">
             {/* Instagram */}
@@ -60,7 +60,7 @@ const Footer = () => {
         </div>
 
         {/* 👇 Profile Image Centered Above Footer Text 👇 */}
-        <div className="flex justify-center mb-4">
+        <div className="flex justify-center mb-4 min-w-fit">
           <img
             src="/photos/artist/WhatsApp Image 2025-07-02 at 20.02.56_89598665.jpg"
             alt="Joseph Barasa"

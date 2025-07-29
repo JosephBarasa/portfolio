@@ -1,5 +1,6 @@
 {
   "softwareDev": [
+
     {
       "title": "Art Repository",
       "technologies": "JS, Python, Django, MSQL",
@@ -13,34 +14,69 @@
       "id": 2
     }
   ],
+
   "visualArts": [
+
     {
-      "title": "The Check.Mate",
-      "category": "Painting",
-      "description": "Mic Cheque Podcast",
-      "media": "Oil on canvas",
+      "title": "Fyah Mummah",
+      "category": "Pencil Portrait",
+      "description": "Mary Njambi Koikai : A battle with Endometriosis",
+      "media": "Pencil",
       "id": 1,
       "mediaUrls": [
-        "/media/the-checkmate-1.jpg",
-        "/media/the-checkmate-2.jpg"
+        "/art/fyahMummah.jpg"
       ]
     },
+
     {
       "title": "The Hustle",
       "category": "Video Edit",
       "description": "June 25th",
       "id": 2,
       "mediaUrls": [
-        "/media/the-hustle.mp4"
+        "/video_edits/WhatsApp Video 2025-07-29 at 13.56.45_2cf42f8d.mp4"
       ]
     },
+
     {
       "title": "Octopizzo",
       "category": "Pencil Portrait",
       "description": "Rags to Riches",
       "id": 3,
       "mediaUrls": [
-        "/art/WhatsApp Image 2025-07-29 at 12.11.22_30edca66.jpg"
+        "/art/octopizzo.jpg"
+      ]
+    },
+
+    {
+      "title": "Pretty",
+      "category": "Oil Painting",
+      "description": "Roses are Red",
+      "id": 4,
+      "mediaUrls": [
+        "/art/pretty1.jpg",
+        "/art/pretty2.jpg",
+        "/art/pretty3.jpg"
+      ]
+    },
+
+    {
+      "title": "Still Life",
+      "category": "Oil Painting",
+      "description": "Dine with me",
+      "id": 5,
+      "mediaUrls": [
+        "/art/stillLife.jpg"
+      ]
+    },
+
+    {
+      "title": "Little Grebe",
+      "category": "Acrylic Painting",
+      "description": "The DabChick",
+      "id": 6,
+      "mediaUrls": [
+        "/art/littleGrebe.jpg"
       ]
     }
   ]

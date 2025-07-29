@@ -49,24 +49,15 @@ const SoftwareDev = ({ softwareDev }) => {
         {/* Adjusted ul to also be inline for centering, potentially using flex or a block element if list item has long text */}
         <ul className="text-sm font-light text-gray-800 space-y-0.5 list-none p-0 flex flex-col items-center">
           <li>{currentProject.technologies}</li>
-          <li className="pt-1">
+          <li className="pt-4">
             {/* GitHub Link: Restyled to match theme */}
             <a
               href={currentProject["githubLink"] || "#"} 
-              className="text-gray-800 underline hover:text-black transition font-normal text-sm" // Restyled for theme consistency
+              className="text-gray-800 underline hover:text-black transition font-normal text-sm" 
               target="_blank"
               rel="noopener noreferrer"
             >
-              GitHub Link
-            </a>
-
-            <a
-              href={currentProject["githubLink"] || "#"} 
-              className="text-gray-800 underline hover:text-black transition font-normal text-sm ml-5" // Restyled for theme consistency
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Live Demo
+              View On GitHub
             </a>
           </li>
         </ul>

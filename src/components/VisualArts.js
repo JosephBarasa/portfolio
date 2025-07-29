@@ -40,7 +40,7 @@ const VisualArts = ({ visualArts }) => {
               to={`/view-art/${currentProject.id}`} 
               className="text-gray-800 underline hover:text-black transition font-normal text-sm" // Restyled for theme consistency
             > 
-              View Artwork
+              View
             </Link>
           </li>
         </ul>
