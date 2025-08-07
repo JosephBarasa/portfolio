@@ -13,7 +13,7 @@ const Footer = () => {
       <div className="relative z-10 max-w-6xl mx-auto">
 
         {/* Top row: Social + Contact */}
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center mb-6">
           {/* Social Icons */}
           <div className="flex space-x-6">
             {/* Instagram */}
@@ -43,9 +43,7 @@ const Footer = () => {
               className="w-10 h-10 text-white hover:bg-white hover:text-black transition-colors duration-300 cursor-pointer flex items-center justify-center">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 
-                5.07 5.07 0 0 0 19.91 3c0 0-1.03 0-3 1.53A12.35 12.35 0 0 0 12 5.09c-2.03 0-4.07.2-6 .56C3.91 3 3 3 3 3a5.07 5.07 0 0 0-.09 
-                1.77A5.44 5.44 0 0 0 2 10.71c0 5.44 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 3c0 0-1.03 0-3 1.53A12.35 12.35 0 0 0 12 5.09c-2.03 0-4.07.2-6 .56C3.91 3 3 3 3 3a5.07 5.07 0 0 0-.09 1.77A5.44 5.44 0 0 0 2 10.71c0 5.44 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
               </svg>
             </a>
           </div>
@@ -59,15 +57,15 @@ const Footer = () => {
           </Link>
         </div>
 
-        {/* 👇 Profile Image Centered Above Footer Text 👇 */}
+        {/* Profile Image Centered Above Footer Text */}
         <div className="flex justify-center mb-4 min-w-fit">
           <img
-            src="/photos/artist/WhatsApp Image 2025-07-02 at 20.02.56_89598665.jpg"
-            alt="Joseph Barasa"
-            className="w-16 h-16 object-cover rounded-full border-2 border-gray-500 shadow"
+            src={ process.env.PUBLIC_URL + '/photos/artist/profile-photo.jpg' }
+            alt="Joseph Barasa - Profile"
+            className="w-24 h-24 object-cover rounded-full shadow-lg border-2 border-gray-400"
             onError={(e) => {
               e.currentTarget.onerror = null;
-              e.currentTarget.src = `https://placehold.co/100x100/cccccc/333333?text=Photo`;
+              e.currentTarget.src = process.env.PUBLIC_URL + `https://placehold.co/200x200/cccccc/333333?text=Photo+Error`;
             }}
           />
         </div>

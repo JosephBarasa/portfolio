@@ -9,12 +9,12 @@ const AboutMe = () => {
         {/* Photo Container - Left Side */}
         <div className="flex-shrink-0">
           <img
-            src="/photos/artist/WhatsApp Image 2025-07-02 at 20.02.56_89598665.jpg"
+            src={ process.env.PUBLIC_URL + '/photos/artist/profile-photo.jpg' }
             alt="Joseph Barasa - Profile"
             className="w-48 h-48 object-cover rounded-full shadow-lg border-2 border-gray-400"
             onError={(e) => {
               e.currentTarget.onerror = null;
-              e.currentTarget.src = `https://placehold.co/200x200/cccccc/333333?text=Photo+Error`;
+              e.currentTarget.src = process.env.PUBLIC_URL + `https://placehold.co/200x200/cccccc/333333?text=Photo+Error`;
             }}
           />
         </div>

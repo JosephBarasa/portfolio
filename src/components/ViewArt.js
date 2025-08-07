@@ -60,12 +60,12 @@ const ViewArt = () => {
                                 <div className="relative w-full max-w-[500px] overflow-hidden rounded-lg shadow-md border border-gray-300 bg-black flex items-center justify-center" style={{ minHeight: '300px' }}>
                                     {isVideo(mediaUrls[currentImageIndex]) ? (
                                         <video
-                                            src={mediaUrls[currentImageIndex]}
+                                            src={ mediaUrls[currentImageIndex] }
                                             controls
                                             className="w-full max-h-[500px] object-contain"
                                             onError={(e) => {
                                                 e.target.onerror = null;
-                                                e.target.src = `https://placehold.co/600x400/cccccc/333333?text=Video+Not+Found`;
+                                                e.target.src = process.env.PUBLIC_URL + `https://placehold.co/600x400/cccccc/333333?text=Video+Not+Found`;
                                             }}
                                         />
                                     ) : (

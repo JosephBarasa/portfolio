@@ -11,14 +11,14 @@ const ChatBot = () => {
 
       {/* Profile Image */}
       <img
-        src="/photos/artist/WhatsApp Image 2025-07-02 at 20.02.56_89598665.jpg"
-        alt="Joseph Barasa"
-        className="w-24 h-24 rounded-full object-cover border border-gray-400 shadow-lg mb-4"
-        onError={(e) => {
-          e.currentTarget.onerror = null;
-          e.currentTarget.src = `https://placehold.co/100x100?text=Image+Error`;
-        }}
-      />
+            src={ process.env.PUBLIC_URL + '/photos/artist/profile-photo.jpg' }
+            alt="Joseph Barasa - Profile"
+            className="w-24 h-24 object-cover rounded-full shadow-lg border-2 border-gray-400"
+            onError={(e) => {
+              e.currentTarget.onerror = null;
+              e.currentTarget.src = process.env.PUBLIC_URL + `https://placehold.co/200x200/cccccc/333333?text=Photo+Error`;
+            }}
+          />
 
       {/* Back Button with Icon + Text */}
       <button

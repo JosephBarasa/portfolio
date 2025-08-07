@@ -4,15 +4,8 @@ import SoftwareDev from './SoftwareDev';
 import VisualArts from './VisualArts';
 import SkillSet from './SkillSet';
 import { Link } from 'react-router-dom';
-import useFetch from '../hooks/useFetch'; // Assuming this hook is correctly fetching data
-import ContactMe from './ContactMe'; // Ensure ContactMe is imported if used as a child
-
-// No longer importing generic Heroicons for social media, using inline SVGs instead.
-// import {
-//   CameraIcon,   // For Instagram
-//   UsersIcon,    // For LinkedIn (represents professional connections)
-//   CodeBracketIcon // For GitHub (represents code/development)
-// } from '@heroicons/react/24/outline';
+import useFetch from '../hooks/useFetch'; 
+import ContactMe from './ContactMe'; 
 
 
 const Home = () => {
