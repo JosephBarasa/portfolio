@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/JosephBarasa/portfolio/static/css/main.a170053e.css",
+    "main.js": "/JosephBarasa/portfolio/static/js/main.6444acbb.js",
+    "index.html": "/JosephBarasa/portfolio/index.html",
+    "main.a170053e.css.map": "/JosephBarasa/portfolio/static/css/main.a170053e.css.map",
+    "main.6444acbb.js.map": "/JosephBarasa/portfolio/static/js/main.6444acbb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a170053e.css",
+    "static/js/main.6444acbb.js"
+  ]
+}
