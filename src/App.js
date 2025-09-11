@@ -3,7 +3,6 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import ContactMe from './components/ContactMe';
 import Footer from './components/Footer';
-import ViewArt from './components/ViewArt';
 import ChatBot from './components/ChatBot';
 
 import {
@@ -37,10 +36,7 @@ const AppContent = () => {
         <Route path="/chat-bot">
           <ChatBot />
         </Route>
-
-        <Route path="/view-art/:id">
-          <ViewArt />
-        </Route>
+        
       </Switch>
 
       {/* Show footer conditionally */}

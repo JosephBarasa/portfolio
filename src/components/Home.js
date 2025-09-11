@@ -4,15 +4,11 @@ import SoftwareDev from './SoftwareDev';
 import VisualArts from './VisualArts';
 import SkillSet from './SkillSet';
 import { Link } from 'react-router-dom';
-import useFetch from '../hooks/useFetch'; 
-import ContactMe from './ContactMe'; 
 
 
 const Home = () => {
 
   const [isVisible, setIsVisible] = useState(false);
-
-  const { softwareDev, visualArts, isPending, error } = useFetch();
 
   useEffect(() => {
     setIsVisible(true);
@@ -118,7 +114,7 @@ const Home = () => {
 
           {/* GitHub Icon */}
           <a
-            href="https://github.com/JosephBarasa" // REPLACE WITH YOUR ACTUAL GITHUB URL
+            href="https://github.com/JosephBarasa" 
             aria-label="GitHub"
             target="_blank"
             rel="noopener noreferrer"
@@ -154,24 +150,21 @@ const Home = () => {
 
       <div className="w-full max-w-6xl mx-auto mt-5 md:mt-1 grid grid-cols-1 md:grid-cols-2 gap-12 px-4 z-10">
 
-        {error && <div className="col-span-full text-center text-red-600 font-medium text-lg">Error: {error}</div>}
-        {isPending && <div className="col-span-full text-center text-gray-600 font-medium text-lg">Loading projects...</div>}
-
         <h3 className="col-span-full text-center text-3xl md:text-4xl font-light text-gray-900 mb-8 pb-4">Catalogue</h3>
 
         {/* Software Development Component Section */}
-        {!isPending && !error && softwareDev && (
+        {(
           <div className="py-4">
             <h3 className="text-center text-xl font-bold text-gray-800 mb-1 pb-2 border-b border-gray-300">Software Development</h3>
-            <SoftwareDev softwareDev={softwareDev} />
+            
           </div>
         )}
 
         {/* Visual Arts Component Section */}
-        {!isPending && !error && visualArts && (
+        {(
           <div className="py-4">
             <h3 className="text-center text-xl font-bold text-gray-800 pb-2 border-b border-gray-300">Visual Arts</h3>
-            <VisualArts visualArts={visualArts} />
+            
           </div>
         )}
       </div>

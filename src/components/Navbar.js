@@ -15,7 +15,7 @@ const Navbar = () => {
 
         {/* Logo */}
         <div>
-          <span className="text-1xl font-light tracking-wide">GIFT.ED</span>
+          <span className="text-1xl font-bold tracking-wide">JB</span>
         </div>
 
         {/* Navigation Links */}
