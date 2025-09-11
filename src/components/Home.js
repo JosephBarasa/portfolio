@@ -156,6 +156,7 @@ const Home = () => {
         {(
           <div className="py-4">
             <h3 className="text-center text-xl font-bold text-gray-800 mb-1 pb-2 border-b border-gray-300">Software Development</h3>
+            <SoftwareDev />
             
           </div>
         )}
@@ -164,6 +165,7 @@ const Home = () => {
         {(
           <div className="py-4">
             <h3 className="text-center text-xl font-bold text-gray-800 pb-2 border-b border-gray-300">Visual Arts</h3>
+            <VisualArts />
             
           </div>
         )}

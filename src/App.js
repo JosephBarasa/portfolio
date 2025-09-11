@@ -4,6 +4,7 @@ import Home from './components/Home';
 import ContactMe from './components/ContactMe';
 import Footer from './components/Footer';
 import ChatBot from './components/ChatBot';
+import ViewArt from './components/ViewArt';
 
 import {
   BrowserRouter as Router,
@@ -12,8 +13,10 @@ import {
   useLocation
 } from 'react-router-dom';
 
+//app content handles the page structure eg navbar, footer
+
 const AppContent = () => {
-  const location = useLocation();
+  const location = useLocation();  //gives access to the current url path
 
   // Paths where Footer should not show
   const hideFooterPaths = ['/chat-bot', '/contact-me'];
@@ -35,6 +38,10 @@ const AppContent = () => {
 
         <Route path="/chat-bot">
           <ChatBot />
+        </Route>
+
+        <Route path="/view-art/:id">
+          <ViewArt />
         </Route>
         
       </Switch>
