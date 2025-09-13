@@ -42,7 +42,7 @@ const Home = () => {
           </p>
 
           <p className="text-base text-gray-800 max-w-md mx-auto leading-relaxed font-light">
-            Creative Developer
+            GIFTED
           </p>
         </div>
 

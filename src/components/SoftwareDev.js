@@ -100,7 +100,7 @@ const SoftwareDev = () => {
           </svg>
         </button>
       </div>
-      )};
+      )}
       
     </div>
   );

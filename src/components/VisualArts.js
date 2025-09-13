@@ -26,7 +26,7 @@ const VisualArts = () => {
         </h3>
         <p className="text-sm text-gray-600 mb-1 font-bold italic">Art details:</p>
         <ul className="text-base font-light text-gray-800 space-y-1 list-none p-0 flex flex-col items-center">
-          <li>{art.media}</li>
+          <li>{art.category}</li>
           <li>{art.year}</li>
           <li className="pt-2">
             <Link 

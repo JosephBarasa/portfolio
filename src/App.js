@@ -13,10 +13,9 @@ import {
   useLocation
 } from 'react-router-dom';
 
-//app content handles the page structure eg navbar, footer
-
+// app content handles the page structure eg navbar, footer
 const AppContent = () => {
-  const location = useLocation();  //gives access to the current url path
+  const location = useLocation();  // gives access to the current url path
 
   // Paths where Footer should not show
   const hideFooterPaths = ['/chat-bot', '/contact-me'];
@@ -43,7 +42,6 @@ const AppContent = () => {
         <Route path="/view-art/:id">
           <ViewArt />
         </Route>
-        
       </Switch>
 
       {/* Show footer conditionally */}
@@ -54,7 +52,7 @@ const AppContent = () => {
 
 const App = () => {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <AppContent />
     </Router>
   );

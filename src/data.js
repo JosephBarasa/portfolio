@@ -20,18 +20,18 @@ export const visualArtsProjects = [
     {
         id: 1,
         title: "Still Life",
-        media: "Oil",
+        category: "Acrylic Painting",
         year: 2025,
         price: "1,500",
-        image: "/art/stillLife.jpg"
+        image: process.env.PUBLIC_URL + "/art/stillLife.jpg"
     },
 
     {
         id: 2,
         title: "Octopizzo",
-        media: "Pencil",
+        category: "Pencil Portrait",
         year: 2025,
         price: "3,500",
-        image: "/art/octopizzo.jpg"
+        image: process.env.PUBLIC_URL + "/art/octopizzo.jpg"
     },
 ];
