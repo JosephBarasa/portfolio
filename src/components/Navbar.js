@@ -18,6 +18,10 @@ const Navbar = () => {
           <span className="text-1xl font-bold tracking-wide">JB</span>
         </div>
 
+        <p className="text-xs md:text-sm font-light text-gray-600">
+          For This Little Thing Of Ours
+        </p>
+
         {/* Navigation Links */}
         <div className="space-x-8 flex items-center">
           <Link to="/" onClick={handleClick} className="hover:text-gray-600 transition">

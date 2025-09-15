@@ -4,7 +4,7 @@ import { visualArtsProjects } from "../data";
 
 const ViewArt = () => {
   const { id } = useParams(); // get the artwork id from the url
-  const history = useHistory(); // useHistory hook must be imported and called at the top level
+  const history = useHistory();
   const art = visualArtsProjects.find((item) => item.id === parseInt(id)); // find the artwork
 
   // handle case when no artwork is found
@@ -30,7 +30,7 @@ const ViewArt = () => {
         />
 
         {/* Extra details */}
-        <p className="mt-4 text-gray-700">{art.media}</p>
+        <p className="mt-4 text-gray-700">{art.category}</p>
         <p className="text-gray-800 font-bold">KES {art.price}</p>
       </div>
 
@@ -56,7 +56,6 @@ const ViewArt = () => {
           <span className="text-sm font-medium">Back</span>
         </button>
       </div>
-
     </>
   );
 };

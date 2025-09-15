@@ -72,12 +72,18 @@ const Footer = () => {
 
         {/* Footer Text */}
         <div className="space-y-2">
+
+          <p className="text-xs md:text-sm font-light text-gray-400">
+            For This Little Thing Of Ours
+          </p>
+
           <p className="text-sm md:text-base font-light tracking-wide text-gray-300">
             Designed & Built by Joseph Barasa © {new Date().getFullYear()}
           </p>
           <p className="text-xs md:text-sm font-light text-gray-400">
             Nairobi, Kenya. All rights reserved.
           </p>
+
         </div>
       </div>
     </footer>
