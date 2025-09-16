@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory, Link } from "react-router-dom";
 import { visualArtsProjects } from "../data";
 
 const ViewArt = () => {
@@ -30,8 +30,17 @@ const ViewArt = () => {
         />
 
         {/* Extra details */}
-        <p className="mt-4 text-gray-700">{art.category}</p>
-        <p className="text-gray-800 font-bold">KES {art.price}</p>
+        <p className=" font-light mt-8 text-gray-700">{art.category}</p> 
+        <p className="text-gray-800 font-bold mt-4">KES {art.price}</p>
+
+        {/* Contact Link */}
+          <Link
+            to="/contact-me"
+            className="text-gray-900 hover:text-gray-600 transition-colors duration-300 font-light text-base tracking-wide underline mt-5"
+          >
+            Get Yours
+          </Link>
+
       </div>
 
       {/* Back Button with Icon + Text */}

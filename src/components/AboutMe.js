@@ -27,10 +27,14 @@ const AboutMe = () => {
         {/* Text Content - Right Side */}
         <div className="flex-1 md:pt-8">
           <p className="text-lg md:text-xl font-light text-gray-800 leading-relaxed text-center md:text-left">
-            {`Building on my background in software development and the arts,
-              I craft functional and engaging digital experiences.
-              I take a modern, minimalistic approach to solve today's complex challenges,
-              blending code and creativity to design elegant solutions for the modern world.`}
+            {`I see technology as a space where creativity  
+              and logic come together to build something meaningful. My journey blends  
+              a background in software development with a deep appreciation for the arts,  
+              allowing me to craft experiences that go beyond function and become expressions  
+              of design, rhythm, and storytelling. Through a modern minimalist lens,
+              I demonstrate how great work is not only about solving problems,  
+              but also about evoking a sense of connection, beauty, and purpose especially in our modern world.`}
+
           </p>
 
           {/* Resume Link with Margin */}

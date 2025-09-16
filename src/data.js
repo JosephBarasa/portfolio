@@ -17,21 +17,67 @@ export const softwareDevProjects = [
 ];
 
 export const visualArtsProjects = [
+
     {
         id: 1,
-        title: "Still Life",
-        category: "Acrylic Painting",
+        title: "Octopizzo",
+        category: "Pencil Portrait",
         year: 2025,
-        price: "1,500",
-        image: process.env.PUBLIC_URL + "/art/stillLife.jpg"
+        price: "2,500",
+        image: process.env.PUBLIC_URL + "/art/octopizzo.jpg"
     },
 
     {
         id: 2,
-        title: "Octopizzo",
+        title: "Fyah Mummah",
         category: "Pencil Portrait",
+        year: 2024,
+        price: "1,500",
+        image: process.env.PUBLIC_URL + "/art/fyahMummah.jpg"
+    },
+
+    {
+        id: 3,
+        title: "Still Life",
+        category: "Acrylic Painting",
         year: 2025,
-        price: "3,500",
-        image: process.env.PUBLIC_URL + "/art/octopizzo.jpg"
+        price: "1,000",
+        image: process.env.PUBLIC_URL + "/art/stillLife.jpg"
+    },
+
+    {
+        id: 4,
+        title: "Little Grebe",
+        category: "Acrylic Painting",
+        year: 2025,
+        price: "1,000",
+        image: process.env.PUBLIC_URL + "/art/littleGrebe.jpg"
+    },
+
+    {
+        id: 5,
+        title: "All Love",
+        category: "Home Decor",
+        year: 2024,
+        price: "200",
+        image: process.env.PUBLIC_URL + "/art/allLove.jpg"
+    },
+
+    {
+        id: 6,
+        title: "B & W",
+        category: "Home Decor",
+        year: 2024,
+        price: "200",
+        image: process.env.PUBLIC_URL + "/art/focalPoint.jpg"
+    },
+
+    {
+        id: 7,
+        title: "All White",
+        category: "Home Decor",
+        year: 2024,
+        price: "200",
+        image: process.env.PUBLIC_URL + "/art/focalPointWhite.jpg"
     },
 ];

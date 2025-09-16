@@ -1,7 +1,5 @@
 import {
   Paintbrush,
-  Video,
-  ImageIcon,
   Palette
 } from 'lucide-react'; // assuming lucide-react is installed
 
@@ -52,19 +50,6 @@ const SkillSet = () => {
           <p className="text-lg font-light text-gray-800 tracking-wide">Portraits</p>
         </div>
 
-        <div className="flex flex-col items-center space-y-3">
-          <div className="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center border border-gray-500">
-            <Video className="h-6 w-6 text-gray-800" />
-          </div>
-          <p className="text-lg font-light text-gray-800 tracking-wide">Video Editing</p>
-        </div>
-
-        <div className="flex flex-col items-center space-y-3">
-          <div className="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center border border-gray-500">
-            <ImageIcon className="h-6 w-6 text-gray-800" />
-          </div>
-          <p className="text-lg font-light text-gray-800 tracking-wide">Graphic Design</p>
-        </div>
 
         <div className="flex flex-col items-center space-y-3">
           <div className="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center border border-gray-500">

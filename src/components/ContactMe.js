@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom'; // ✅ Import useHistory for navigation
-import { ArrowLeft } from 'lucide-react'; // ✅ Optional: if using lucide-react for icons
+import { ArrowLeft, MessageCircle } from 'lucide-react'; // ✅ Added WhatsApp icon
 
 const ContactMe = () => {
     const history = useHistory(); // ✅ Setup navigation
@@ -58,18 +58,19 @@ const ContactMe = () => {
         <section className="min-h-screen bg-gray-300 py-16 flex flex-col items-center justify-center px-4">
             <div className="container mx-auto max-w-4xl">
                 <h1 className="text-4xl md:text-5xl font-light text-center text-gray-900 mb-6">
-                    Get in Touch
+                   Words as Bridges
                 </h1>
                 <p className="text-lg text-center text-gray-700 mb-8 max-w-2xl mx-auto">
-                    Have a question, a project idea, or just want to say hello? Fill out the form below or reach out directly!
+                    Have an idea, a vision, or simply a hello?  
+                    Reach out — let’s turn imagination into creation.
                 </p>
 
                 <div className="bg-gray-400 p-8 rounded-lg shadow-xl grid grid-cols-1 md:grid-cols-2 gap-10">
                     <div>
-                        <h2 className="text-2xl font-light text-gray-800 mb-4">Send Me a Message</h2>
+                        <h2 className="text-2xl font-light text-gray-800 mb-4">Share Your Thoughts</h2>
                         {submitStatus === 'success' && (
-                            <p className="text-green-600 font-medium mb-4">
-                                Thank you for your message! I'll get back to you soon.
+                            <p className="text-green-900 font-medium mb-4">
+                                Your note has found its place — I’ll respond soon.
                             </p>
                         )}
                         {submitStatus === 'error' && (
@@ -135,11 +136,25 @@ const ContactMe = () => {
                     </div>
 
                     <div className="md:border-l md:border-gray-200 md:pl-10">
-                        <h2 className="text-2xl font-light text-gray-800 mb-4">Or Connect Directly</h2>
+                        <h2 className="text-2xl font-light text-gray-800 mb-4">Find Me Beyond The Form</h2>
                         <div className="space-y-3">
                             <p className="text-gray-600">
-                                Prefer to reach out another way? Here are my direct contact points:
+                                Here are my direct contact points :
                             </p>
+
+                            <div>
+                                <h3 className="text-lg font-medium text-gray-800">WhatsApp</h3>
+                                <a
+                                    href="https://wa.me/254790463858"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-2 text-gray-800 hover:underline"
+                                >
+                                    <MessageCircle className="w-5 h-5" />
+                                    Message on WhatsApp
+                                </a>
+                            </div>
+                            
                             <div>
                                 <h3 className="text-lg font-medium text-gray-800">Email</h3>
                                 <a href="mailto:josephbarasa622@gmail.com" className="text-gray-800 hover:underline">
@@ -168,6 +183,7 @@ const ContactMe = () => {
                                     github.com/JosephBarasa
                                 </a>
                             </div>
+
                         </div>
                     </div>
                 </div>
