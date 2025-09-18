@@ -6,7 +6,7 @@ const ChatBot = () => {
   return (
     <div className="flex flex-col items-center justify-center px-4 mt-20 text-center">
       <p className="text-xl md:text-2xl font-light text-gray-800 max-w-lg leading-relaxed mb-6">
-        {`Sorry, I'm still working on making a friendly bot for you. Please check back later!`}
+        {`I'm working on making a friendly bot for you. Please check back later.`}
       </p>
 
       {/* Profile Image */}

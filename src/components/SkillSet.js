@@ -28,20 +28,6 @@ const SkillSet = () => {
           <p className="text-lg font-light text-gray-800 tracking-wide">React</p>
         </div>
 
-        <div className="flex flex-col items-center space-y-3">
-          <div className="w-16 h-16 bg-gray-400 rounded-full flex items-center justify-center text-xl font-bold text-gray-800 border border-gray-500">
-            Py
-          </div>
-          <p className="text-lg font-light text-gray-800 tracking-wide">Python</p>
-        </div>
-
-        <div className="flex flex-col items-center space-y-3">
-          <div className="w-16 h-16 bg-gray-400 rounded-full flex items-center justify-center text-xl font-bold text-gray-800 border border-gray-500">
-            Dj
-          </div>
-          <p className="text-lg font-light text-gray-800 tracking-wide">Django</p>
-        </div>
-
         {/* Visual Arts Skills */}
         <div className="flex flex-col items-center space-y-3">
           <div className="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center border border-gray-500">
