@@ -38,7 +38,7 @@ const Home = () => {
 
         <div className="space-y-4">
           <p className="text-xl md:text-2xl font-light text-gray-700 tracking-wide">
-            Software Developer & Visual Artist
+            Web Developer & Visual Artist
           </p>
 
           <p className="text-base text-gray-800 max-w-md mx-auto leading-relaxed font-light">
@@ -155,7 +155,7 @@ const Home = () => {
         {/* Software Development Component Section */}
         {(
           <div className="py-4">
-            <h3 className="text-center text-xl font-bold text-gray-800 mb-1 pb-2 border-b border-gray-300">Software Development</h3>
+            <h3 className="text-center text-xl font-bold text-gray-800 mb-1 pb-2 border-b border-gray-300">Web Development</h3>
             <SoftwareDev />
             
           </div>

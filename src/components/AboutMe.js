@@ -29,7 +29,7 @@ const AboutMe = () => {
           <p className="text-lg md:text-xl font-light text-gray-800 leading-relaxed text-center md:text-left">
             {`I see technology as a space where creativity  
               and logic come together to build something meaningful. My journey blends  
-              a background in software development with a deep appreciation for the arts,  
+              a background in web development with a deep appreciation for the arts,  
               allowing me to craft experiences that go beyond function and become expressions  
               of design, rhythm, and storytelling. Through a modern minimalist lens,
               I demonstrate how great work is not only about solving problems,  
