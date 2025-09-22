@@ -7,7 +7,7 @@ import ChatBot from './components/ChatBot';
 import ViewArt from './components/ViewArt';
 
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Route,
   Switch,
   useLocation

@@ -17,13 +17,12 @@ const Home = () => {
   return (
     <section className="min-h-screen flex flex-col items-center bg-gray-300 text-black px-4 relative overflow-x-hidden py-16 md:py-24">
 
-      {/* Subtle background elements - Set to a lower z-index */}
       <div className="absolute inset-0 opacity-5 z-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-black rounded-full filter blur-3xl"></div>
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gray-800 rounded-full filter blur-3xl"></div>
       </div>
 
-      {/* Main Hero content */}
+      {/* Hero content */}
       <div className={`flex flex-col items-center text-center space-y-8 md:space-y-12 z-10
                              transition-all duration-1000 ease-out transform ${
                                isVisible ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0'
@@ -60,7 +59,7 @@ const Home = () => {
           </Link>
         </div>
 
-        {/* Social Icons - Borders removed */}
+        {/* Social Icons */}
         <div className="flex justify-center space-x-6 mt-12">
           {/* Instagram Icon */}
           <a
