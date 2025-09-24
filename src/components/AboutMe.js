@@ -14,9 +14,9 @@ const AboutMe = () => {
         {/* Photo Container - Left Side */}
         <div className="flex-shrink-0">
           <img
-            src={ process.env.PUBLIC_URL + '/photos/artist/profile-photo.jpg' }
+            src={ process.env.PUBLIC_URL + '/photos/artist/JB-5.jpg' }
             alt="JB"
-            className="w-48 h-48 object-cover rounded-full shadow-lg border-2 border-gray-400"
+            className="w-80 h-80 object-cover rounded-full shadow-lg border-2 border-gray-400"
             onError={(e) => {
               e.currentTarget.onerror = null;
               e.currentTarget.src = process.env.PUBLIC_URL + `https://placehold.co/200x200/cccccc/333333?text=Photo+Error`;
@@ -30,11 +30,9 @@ const AboutMe = () => {
             {`I see technology as a space where creativity  
               and logic come together to build something meaningful. My journey blends  
               a background in web development with a deep appreciation for the arts,  
-              allowing me to craft experiences that go beyond function and become expressions  
-              of design, rhythm, and storytelling. Through a modern minimalist lens,
-              I demonstrate how great work is not only about solving problems,  
-              but also about evoking a sense of connection, beauty, and purpose especially in our modern world.`}
-
+              allowing me to craft experiences through a modern minimalist lens,
+              demonstrating how great work is not only about solving problems,  
+              but also about evoking a sense of connection, beauty, and purpose in our modern world.`}
           </p>
 
           {/* Resume Link with Margin */}

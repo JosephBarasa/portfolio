@@ -2,7 +2,8 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-8 px-4 text-center relative overflow-hidden">
+    <footer className="bg-black text-white py-8 px-4 text-center relative overflow-hidden bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/background-images/JB-5.jpg)` }}>
       {/* Subtle background blur effects */}
       <div className="absolute inset-0 opacity-5 pointer-events-none z-0">
         <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-white rounded-full filter blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
@@ -73,7 +74,7 @@ const Footer = () => {
         {/* Footer Text */}
         <div className="space-y-2">
 
-          <p className="text-xs md:text-sm font-light text-gray-400">
+          <p className="text-xs md:text-sm font-light text-gray-100">
             For This Little Thing Of Ours
           </p>
 
