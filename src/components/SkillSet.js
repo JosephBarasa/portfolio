@@ -37,26 +37,13 @@ const SkillSet = () => {
         </div>
 
         {/* Visual Arts Skills */}
-        <div className="flex flex-col items-center space-y-3">
-          <div className="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center border border-gray-500">
-            <Paintbrush className="h-6 w-6 text-gray-800" />
-          </div>
-          <p className="text-lg font-light text-gray-800 tracking-wide">Portraits</p>
-        </div>
 
 
         <div className="flex flex-col items-center space-y-3">
           <div className="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center border border-gray-500">
             <Palette className="h-6 w-6 text-gray-800" />
           </div>
-          <p className="text-lg font-light text-gray-800 tracking-wide">Paintings</p>
-        </div>
-
-        <div className="flex flex-col items-center space-y-3">
-          <div className="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center border border-gray-500">
-            <Clipboard className="h-6 w-6 text-gray-900" />
-          </div>
-          <p className="text-lg font-light text-gray-800 tracking-wide">Graphic Design</p>
+          <p className="text-lg font-light text-gray-800 tracking-wide">Art</p>
         </div>
 
       </div>
