@@ -3,6 +3,7 @@ import AboutMe from './AboutMe';
 import SoftwareDev from './SoftwareDev';
 import VisualArts from './VisualArts';
 import SkillSet from './SkillSet';
+import Checkmate from './Checkmate';
 import { Link } from 'react-router-dom';
 
 
@@ -31,7 +32,7 @@ const Home = () => {
                               } max-w-4xl w-full`}>
 
           <div className="space-y-4">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-light tracking-wide text-black leading-tight">
+            <h1  className="text-5xl md:text-6xl lg:text-7xl font-light tracking-wide text-black leading-tight">
               Joseph Barasa
             </h1>
             <div className="h-px w-24 bg-black mx-auto"></div>
@@ -173,6 +174,11 @@ const Home = () => {
 
       {/* Skills */}
       <SkillSet />
+
+      <hr className="w-full max-w-5xl border-t border-gray-700 my-10" />
+
+      {/* checkmate */}
+      <Checkmate />
 
       <hr className="w-full max-w-5xl border-t border-gray-700 my-10" />
 
