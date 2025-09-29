@@ -3,7 +3,6 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import ContactMe from './components/ContactMe';
 import Footer from './components/Footer';
-import ChatBot from './components/ChatBot';
 import ViewArt from './components/ViewArt';
 
 import {
@@ -33,10 +32,6 @@ const AppContent = () => {
 
         <Route path="/contact-me">
           <ContactMe />
-        </Route>
-
-        <Route path="/chat-bot">
-          <ChatBot />
         </Route>
 
         <Route path="/view-art/:id">

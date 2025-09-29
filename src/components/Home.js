@@ -54,11 +54,6 @@ const Home = () => {
             >
               Contact Me
             </Link>
-            <Link to="/chat-bot"
-              className="px-8 py-3 border border-black text-black font-light tracking-wide hover:bg-black hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-50"
-            >
-              ChatBot
-            </Link>
           </div>
 
           {/* Social Icons */}
