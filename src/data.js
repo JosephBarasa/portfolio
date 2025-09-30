@@ -20,6 +20,15 @@ export const visualArtsProjects = [
 
     {
         id: 1,
+        title: "Mic Cheque Pod",
+        category: "Contemporary Painting",
+        year: 2025,
+        price: "0.00",
+        image: process.env.PUBLIC_URL + "/art/checkmate1.png"
+    },
+
+    {
+        id: 2,
         title: "Octopizzo",
         category: "Pencil Portrait",
         year: 2025,
@@ -28,7 +37,7 @@ export const visualArtsProjects = [
     },
 
     {
-        id: 2,
+        id: 3,
         title: "Fyah Mummah",
         category: "Pencil Portrait",
         year: 2024,
@@ -37,7 +46,7 @@ export const visualArtsProjects = [
     },
 
     {
-        id: 3,
+        id: 4,
         title: "Still Life",
         category: "Acrylic Painting",
         year: 2025,
@@ -46,7 +55,7 @@ export const visualArtsProjects = [
     },
 
     {
-        id: 4,
+        id: 5,
         title: "Little Grebe",
         category: "Acrylic Painting",
         year: 2025,
@@ -55,7 +64,7 @@ export const visualArtsProjects = [
     },
 
     {
-        id: 5,
+        id: 6,
         title: "All Love",
         category: "Home Decor",
         year: 2024,
@@ -64,7 +73,7 @@ export const visualArtsProjects = [
     },
 
     {
-        id: 6,
+        id: 7,
         title: "B & W",
         category: "Home Decor",
         year: 2024,
@@ -73,7 +82,7 @@ export const visualArtsProjects = [
     },
 
     {
-        id: 7,
+        id: 8,
         title: "All White",
         category: "Home Decor",
         year: 2024,

@@ -6,7 +6,7 @@ const Checkmate = () => {
             {/* Image Group (Left Side) */}
             <div className="flex-shrink-0 mr-6 mb-4 md:mb-0">
                 <img 
-                    src={process.env.PUBLIC_URL + '/art/checkmate.png'} 
+                    src={process.env.PUBLIC_URL + '/art/checkmate1.png'} 
                     alt="checkmate"
                     // Added 'rounded-lg' for a nicer look and kept size
                     className="w-80 h-80 rounded-lg object-cover" 
@@ -15,16 +15,15 @@ const Checkmate = () => {
 
             {/* Content Group (Right Side) */}
             <div>
-                <h1 className="text-3xl font-light mb-4">The Checkmate</h1>
+                <h1 className="text-3xl font-light mb-4">Mic Cheque Pod</h1>
                 
                 {/* Add any other text or content here */}
                 <p className="text-lg md:text-xl font-light text-gray-800 leading-relaxed text-center md:text-left">
-                    {`A contemporary painting of the Mic Cheque Podcast's crew and a deep appreciation for their work.
-                    October 1st.`}
+                    {`A contemporary painting of the Mic Cheque Podcast's crew.`}
                 </p>
 
                 <p className="text-sm text-gray-600 mb-2 font-bold italic">
-                    NOTE : This is not the final painting.
+                    Check details in the visual arts catalogue section.
                 </p>
             </div>
         </div>

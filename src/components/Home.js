@@ -178,7 +178,10 @@ const Home = () => {
       <hr className="w-full max-w-5xl border-t border-gray-700 my-10" />
 
       {/* checkmate */}
-      <Checkmate />
+      <section id="checkmate">
+        <Checkmate />      
+      </section>
+
 
       <hr className="w-full max-w-5xl border-t border-gray-700 my-10" />
 

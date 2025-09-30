@@ -24,6 +24,7 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <div className="space-x-8 flex items-center">
+
           <Link to="/" onClick={handleClick} className="hover:text-gray-600 transition">
             {/* Home Icon (SVG) - Now perfectly square with no curves */}
             <svg
@@ -39,6 +40,8 @@ const Navbar = () => {
               <path strokeLinecap="round" strokeLinejoin="round" d="M3 9L12 3L21 9V21H3V9ZM6 12V18H9V12H6Z" />
             </svg>
           </Link>
+          
+
         </div>
 
       </div>
