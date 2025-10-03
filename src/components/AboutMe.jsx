@@ -14,7 +14,7 @@ const AboutMe = () => {
         {/* Photo Container - Left Side */}
         <div className="flex-shrink-0">
           <img
-            src={ process.env.PUBLIC_URL + '/photos/artist/JB-5.jpg' }
+            src={'/photos/artist/JB-5.jpg' }
             alt="JB"
             className="w-80 h-80 object-cover rounded-full shadow-lg border-2 border-gray-400"
             onError={(e) => {

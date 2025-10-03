@@ -1,10 +1,10 @@
 import React from "react";
-import { useParams, useHistory, Link } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { visualArtsProjects } from "../data";
 
 const ViewArt = () => {
   const { id } = useParams(); // get the artwork id from the url
-  const history = useHistory();
+  const navigate = useNavigate(); // useNavigate replaces useHistory in React Router v6
   const art = visualArtsProjects.find((item) => item.id === parseInt(id)); // find the artwork
 
   // handle case when no artwork is found
@@ -17,7 +17,6 @@ const ViewArt = () => {
   }
 
   return (
-    // Wrap both elements in a single parent element like a Fragment
     <>
       <div className="flex flex-col items-center justify-center py-6">
         <h2 className="text-2xl font-semibold mb-4">{art.title}</h2>
@@ -30,23 +29,22 @@ const ViewArt = () => {
         />
 
         {/* Extra details */}
-        <p className=" font-light mt-8 text-gray-700">{art.category}</p> 
+        <p className="font-light mt-8 text-gray-700">{art.category}</p>
         <p className="text-gray-800 font-bold mt-4">KES {art.price}</p>
 
         {/* Contact Link */}
-          <Link
-            to="/contact-me"
-            className="text-gray-900 hover:text-gray-600 transition-colors duration-300 font-light text-base tracking-wide underline mt-5"
-          >
-            Get Yours
-          </Link>
-
+        <Link
+          to="/contact-me"
+          className="text-gray-900 hover:text-gray-600 transition-colors duration-300 font-light text-base tracking-wide underline mt-5"
+        >
+          Get Yours
+        </Link>
       </div>
 
       {/* Back Button with Icon + Text */}
       <div className="flex justify-center mt-12 mb-12">
         <button
-          onClick={() => history.goBack()}
+          onClick={() => navigate(-1)} // navigate back
           className="flex items-center gap-2 text-gray-800 hover:text-black px-6 py-3 shadow-sm transition"
           aria-label="Go back"
         >

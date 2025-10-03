@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <footer className="bg-black text-white py-8 px-4 text-center relative overflow-hidden bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/background-images/JB-5.jpg)` }}>
+      style={{ backgroundImage: `url(/background-images/JB-5.jpg)` }}>
       {/* Subtle background blur effects */}
       <div className="absolute inset-0 opacity-5 pointer-events-none z-0">
         <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-white rounded-full filter blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
@@ -61,12 +61,12 @@ const Footer = () => {
         {/* Profile Image Centered Above Footer Text */}
         <div className="flex justify-center mb-4 min-w-fit">
           <img
-            src={ process.env.PUBLIC_URL + '/photos/artist/profile-photo.jpg' }
+            src={ '/photos/artist/profile-photo.jpg' }
             alt="Joseph Barasa - Profile"
             className="w-24 h-24 object-cover rounded-full shadow-lg border-2 border-gray-400"
             onError={(e) => {
               e.currentTarget.onerror = null;
-              e.currentTarget.src = process.env.PUBLIC_URL + `https://placehold.co/200x200/cccccc/333333?text=Photo+Error`;
+              e.currentTarget.src = `https://placehold.co/200x200/cccccc/333333?text=Photo+Error`;
             }}
           />
         </div>

@@ -6,7 +6,7 @@ const Checkmate = () => {
             {/* Image Group (Left Side) */}
             <div className="flex-shrink-0 mr-6 mb-4 md:mb-0">
                 <img 
-                    src={process.env.PUBLIC_URL + '/art/checkmate1.png'} 
+                    src={'/art/checkmate1.png'} 
                     alt="checkmate"
                     // Added 'rounded-lg' for a nicer look and kept size
                     className="w-80 h-80 rounded-lg object-cover" 

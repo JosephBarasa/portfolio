@@ -24,7 +24,7 @@ export const visualArtsProjects = [
         category: "Contemporary Painting",
         year: 2025,
         price: "0.00",
-        image: process.env.PUBLIC_URL + "/art/checkmate1.png"
+        image: "/art/checkmate1.png"
     },
 
     {
@@ -33,7 +33,7 @@ export const visualArtsProjects = [
         category: "Pencil Portrait",
         year: 2025,
         price: "2,500",
-        image: process.env.PUBLIC_URL + "/art/octopizzo.jpg"
+        image: "/art/octopizzo.jpg"
     },
 
     {
@@ -42,7 +42,7 @@ export const visualArtsProjects = [
         category: "Pencil Portrait",
         year: 2024,
         price: "1,500",
-        image: process.env.PUBLIC_URL + "/art/fyahMummah.jpg"
+        image: "/art/fyahMummah.jpg"
     },
 
     {
@@ -51,7 +51,7 @@ export const visualArtsProjects = [
         category: "Acrylic Painting",
         year: 2025,
         price: "1,000",
-        image: process.env.PUBLIC_URL + "/art/stillLife.jpg"
+        image: "/art/stillLife.jpg"
     },
 
     {
@@ -60,7 +60,7 @@ export const visualArtsProjects = [
         category: "Acrylic Painting",
         year: 2025,
         price: "1,000",
-        image: process.env.PUBLIC_URL + "/art/littleGrebe.jpg"
+        image: "/art/littleGrebe.jpg"
     },
 
     {
@@ -69,7 +69,7 @@ export const visualArtsProjects = [
         category: "Home Decor",
         year: 2024,
         price: "200",
-        image: process.env.PUBLIC_URL + "/art/allLove.jpg"
+        image: "/art/allLove.jpg"
     },
 
     {
@@ -78,7 +78,7 @@ export const visualArtsProjects = [
         category: "Home Decor",
         year: 2024,
         price: "200",
-        image: process.env.PUBLIC_URL + "/art/focalPoint.jpg"
+        image: "/art/focalPoint.jpg"
     },
 
     {
@@ -87,6 +87,6 @@ export const visualArtsProjects = [
         category: "Home Decor",
         year: 2024,
         price: "200",
-        image: process.env.PUBLIC_URL + "/art/focalPointWhite.jpg"
+        image: "/art/focalPointWhite.jpg"
     },
 ];

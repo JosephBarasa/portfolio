@@ -8,7 +8,7 @@ import ViewArt from './components/ViewArt';
 import {
   HashRouter as Router,
   Route,
-  Switch,
+  Routes,
   useLocation
 } from 'react-router-dom';
 
@@ -25,19 +25,14 @@ const AppContent = () => {
     <div className="app-wrapper">
       <Navbar />
 
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
+      <Routes>
+        <Route path="/" element={<Home />} />
 
-        <Route path="/contact-me">
-          <ContactMe />
-        </Route>
+        <Route path="/contact-me" element={<ContactMe />} />
 
-        <Route path="/view-art/:id">
-          <ViewArt />
-        </Route>
-      </Switch>
+        <Route path="/view-art/:id" element={<ViewArt />} />
+
+      </Routes>
 
       {/* Show footer conditionally */}
       {!shouldHideFooter && <Footer />}
@@ -47,7 +42,7 @@ const AppContent = () => {
 
 const App = () => {
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router>
       <AppContent />
     </Router>
   );
