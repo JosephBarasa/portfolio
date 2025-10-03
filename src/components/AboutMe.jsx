@@ -19,7 +19,7 @@ const AboutMe = () => {
             className="w-80 h-80 object-cover rounded-full shadow-lg border-2 border-gray-400"
             onError={(e) => {
               e.currentTarget.onerror = null;
-              e.currentTarget.src = process.env.PUBLIC_URL + `https://placehold.co/200x200/cccccc/333333?text=Photo+Error`;
+              e.currentTarget.src = `https://placehold.co/200x200/cccccc/333333?text=Photo+Error`;
             }}
           />
         </div>
