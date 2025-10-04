@@ -1,7 +1,9 @@
+import JB5 from '../assets/artist/JB5.jpg';
+
 const AboutMe = () => {
 
   const handleResumeClick = () => {
-    alert("My resume is not yet ready. Please check back later.")
+    alert("Please check back later.")
   }
 
   return (
@@ -14,7 +16,7 @@ const AboutMe = () => {
         {/* Photo Container - Left Side */}
         <div className="flex-shrink-0">
           <img
-            src={'/photos/artist/JB-5.jpg' }
+            src={JB5}
             alt="JB"
             className="w-80 h-80 object-cover rounded-full shadow-lg border-2 border-gray-400"
             onError={(e) => {

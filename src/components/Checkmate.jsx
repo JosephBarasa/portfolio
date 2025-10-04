@@ -1,3 +1,5 @@
+import checkmate1 from '../assets/art/checkmate1.png';
+
 const Checkmate = () => {
     return ( 
         // 1. Apply 'flex' to the parent div containing the heading and the image group
@@ -6,7 +8,7 @@ const Checkmate = () => {
             {/* Image Group (Left Side) */}
             <div className="flex-shrink-0 mr-6 mb-4 md:mb-0">
                 <img 
-                    src={'/art/checkmate1.png'} 
+                    src={checkmate1} 
                     alt="checkmate"
                     // Added 'rounded-lg' for a nicer look and kept size
                     className="w-80 h-80 rounded-lg object-cover" 

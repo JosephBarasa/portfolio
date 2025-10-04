@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
+import profilePhoto from '../assets/artist/profile-photo.jpg';
+import JB5 from '../assets/artist/JB5.jpg';
 
 const Footer = () => {
   return (
     <footer className="bg-black text-white py-8 px-4 text-center relative overflow-hidden bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: `url(/background-images/JB-5.jpg)` }}>
+      style={{ backgroundImage: `url(${JB5})` }}>
       {/* Subtle background blur effects */}
       <div className="absolute inset-0 opacity-5 pointer-events-none z-0">
         <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-white rounded-full filter blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
@@ -61,7 +63,7 @@ const Footer = () => {
         {/* Profile Image Centered Above Footer Text */}
         <div className="flex justify-center mb-4 min-w-fit">
           <img
-            src={ '/photos/artist/profile-photo.jpg' }
+            src={ profilePhoto}
             alt="Joseph Barasa - Profile"
             className="w-24 h-24 object-cover rounded-full shadow-lg border-2 border-gray-400"
             onError={(e) => {

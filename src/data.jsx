@@ -1,3 +1,13 @@
+import checkmate1 from './assets/art/checkmate1.png';
+import octopizzo from './assets/art/octopizzo.jpg';
+import fyahMummah from './assets/art/fyahMummah.jpg';
+import stillLife from './assets/art/stillLife.jpg';
+import littleGrebe from './assets/art/littleGrebe.jpg';
+import allLove from './assets/art/allLove.jpg';
+import focalPoint from './assets/art/focalPoint.jpg';
+import focalPointWhite from './assets/art/focalPointWhite.jpg';
+
+
 // SoftwareDev Projects
 
 export const softwareDevProjects = [
@@ -24,7 +34,7 @@ export const visualArtsProjects = [
         category: "Contemporary Painting",
         year: 2025,
         price: "0.00",
-        image: "/art/checkmate1.png"
+        image: checkmate1
     },
 
     {
@@ -33,7 +43,7 @@ export const visualArtsProjects = [
         category: "Pencil Portrait",
         year: 2025,
         price: "2,500",
-        image: "/art/octopizzo.jpg"
+        image: octopizzo
     },
 
     {
@@ -42,7 +52,7 @@ export const visualArtsProjects = [
         category: "Pencil Portrait",
         year: 2024,
         price: "1,500",
-        image: "/art/fyahMummah.jpg"
+        image: fyahMummah
     },
 
     {
@@ -51,7 +61,7 @@ export const visualArtsProjects = [
         category: "Acrylic Painting",
         year: 2025,
         price: "1,000",
-        image: "/art/stillLife.jpg"
+        image: stillLife
     },
 
     {
@@ -60,7 +70,7 @@ export const visualArtsProjects = [
         category: "Acrylic Painting",
         year: 2025,
         price: "1,000",
-        image: "/art/littleGrebe.jpg"
+        image: littleGrebe
     },
 
     {
@@ -69,7 +79,7 @@ export const visualArtsProjects = [
         category: "Home Decor",
         year: 2024,
         price: "200",
-        image: "/art/allLove.jpg"
+        image: allLove
     },
 
     {
@@ -78,7 +88,7 @@ export const visualArtsProjects = [
         category: "Home Decor",
         year: 2024,
         price: "200",
-        image: "/art/focalPoint.jpg"
+        image: focalPoint
     },
 
     {
@@ -87,6 +97,6 @@ export const visualArtsProjects = [
         category: "Home Decor",
         year: 2024,
         price: "200",
-        image: "/art/focalPointWhite.jpg"
+        image: focalPointWhite
     },
 ];
