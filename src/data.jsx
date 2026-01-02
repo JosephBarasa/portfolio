@@ -13,7 +13,7 @@ import focalPointWhite from './assets/art/focalPointWhite.jpg';
 export const softwareDevProjects = [
     {
         id: 1,
-        title: "Digital Art Repository",
+        title: "Art Repository",
         technologies: "Django, Python, JS",
         githubLink: "https://github.com/JosephBarasa/Digital-Art-Repository-Main",
     },
@@ -29,15 +29,6 @@ export const softwareDevProjects = [
 export const visualArtsProjects = [
 
     {
-        id: 1,
-        title: "Mic Cheque Pod",
-        category: "Contemporary Painting",
-        year: 2025,
-        price: "0.00",
-        image: checkmate1
-    },
-
-    {
         id: 2,
         title: "Octopizzo",
         category: "Pencil Portrait",
@@ -47,20 +38,11 @@ export const visualArtsProjects = [
     },
 
     {
-        id: 3,
-        title: "Fyah Mummah",
-        category: "Pencil Portrait",
-        year: 2024,
-        price: "1,500",
-        image: fyahMummah
-    },
-
-    {
         id: 4,
         title: "Still Life",
         category: "Acrylic Painting",
         year: 2025,
-        price: "1,000",
+        price: "2,000",
         image: stillLife
     },
 
@@ -69,34 +51,34 @@ export const visualArtsProjects = [
         title: "Little Grebe",
         category: "Acrylic Painting",
         year: 2025,
-        price: "1,000",
+        price: "2,000",
         image: littleGrebe
     },
 
     {
         id: 6,
         title: "All Love",
-        category: "Home Decor",
+        category: "decorate your space",
         year: 2024,
-        price: "200",
+        price: "300",
         image: allLove
     },
 
     {
         id: 7,
         title: "B & W",
-        category: "Home Decor",
+        category: "decorate your space",
         year: 2024,
-        price: "200",
+        price: "300",
         image: focalPoint
     },
 
     {
         id: 8,
         title: "All White",
-        category: "Home Decor",
+        category: "decorate your space",
         year: 2024,
-        price: "200",
+        price: "300",
         image: focalPointWhite
     },
 ];

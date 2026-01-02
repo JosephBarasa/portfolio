@@ -10,7 +10,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="bg-gray-300 text-black sticky top-0 z-50 shadow-sm border-b border-gray-400">
+    <nav className="bg-neutral-200 text-black sticky top-0 z-50 shadow-sm border-b border-gray-400">
       <div className="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
 
         {/* Logo */}
@@ -18,7 +18,7 @@ const Navbar = () => {
           <span className="text-1xl font-bold tracking-wide">JB</span>
         </div>
 
-        <p className="text-xs md:text-sm font-light text-gray-600">
+        <p className="text-xs md:text-sm font-light">
           For This Little Thing Of Ours
         </p>
 

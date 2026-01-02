@@ -55,17 +55,12 @@ const ContactMe = () => {
   };
 
   return (
-    <section className="min-h-screen bg-gray-300 py-16 flex flex-col items-center justify-center px-4">
+    <section className="min-h-screen bg-gray-200 py-16 flex flex-col items-center justify-center px-4">
       <div className="container mx-auto max-w-4xl">
         <h1 className="text-4xl md:text-5xl font-light text-center text-gray-900 mb-6">
-          Words as Bridges
+          Talk To Me
         </h1>
-        <p className="text-lg text-center text-gray-700 mb-8 max-w-2xl mx-auto">
-          Have an idea, a vision, or simply a hello?  
-          Reach out — let’s turn imagination into creation.
-        </p>
-
-        <div className="bg-gray-400 p-8 rounded-lg shadow-xl grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="bg-gray-200 p-8 rounded-lg shadow-xl grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* Contact Form */}
           <div>
             <h2 className="text-2xl font-light text-gray-800 mb-4">Share Your Thoughts</h2>
@@ -141,7 +136,7 @@ const ContactMe = () => {
             <h2 className="text-2xl font-light text-gray-800 mb-4">Find Me Beyond The Form</h2>
             <div className="space-y-3">
               <p className="text-gray-600">
-                Here are my direct contact points:
+                Direct Contacts :
               </p>
 
               <div>
