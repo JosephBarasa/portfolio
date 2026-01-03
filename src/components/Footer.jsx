@@ -1,5 +1,4 @@
-import { Link } from 'react-router-dom';
-import profilePhoto from '../assets/artist/profile-photo.jpg';
+import grad from '../assets/artist/grad.jpeg';
 
 const Footer = () => {
   return (
@@ -15,7 +14,7 @@ const Footer = () => {
         {/* Profile Image Centered Above Footer Text */}
         <div className="flex justify-center mb-4 min-w-fit">
           <img
-            src={ profilePhoto}
+            src={ grad }
             alt="Joseph Barasa - Profile"
             className="w-24 h-24 object-cover rounded-full shadow-lg border-2 border-gray-400"
             onError={(e) => {
