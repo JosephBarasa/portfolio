@@ -1,4 +1,3 @@
-import React from "react";
 import { softwareDevProjects } from "../data";
 import { useState } from "react";
 

@@ -1,23 +1,34 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { visualArtsProjects } from "../data";
+import { Link, useLocation } from 'react-router-dom';  //link for client-side navigation using react-router
+import { visualArtsProjects } from "../data";  //visual arts data array from data.json
 
 const VisualArts = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const location = useLocation();
+
+  //state to track the currently displayed artwork index
+  const [currentIndex, setCurrentIndex] = useState(location.state?.restoreIndex ?? 0);
+
+  //total number of artworks available
   const totalArtworks = visualArtsProjects.length;
 
+  //navigate to the previous artwork
+  //if at the first artwork, move back to the last
   const goToPrev = () => {
     setCurrentIndex((prevIndex) => prevIndex === 0 ? totalArtworks - 1 : prevIndex - 1);
   };
 
+  //navigate to the next artwork
+  //if at the last artwork, loop back to the first
   const goToNext = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === totalArtworks - 1 ? 0 : prevIndex + 1
     );
   };
 
-  const art = visualArtsProjects[currentIndex];
-
+  //get the currently selected artwork based on index
+  const art = visualArtsProjects[currentIndex]; 
+  
   return (
     <div className="space-y-4 pt-1 pb-4">
       <div key={art.id} className="px-2 py-4 text-center">
@@ -30,7 +41,8 @@ const VisualArts = () => {
           <li>{art.year}</li>
           <li className="pt-2">
             <Link 
-              to={`/view-art/${art.id}`} 
+              to={`/view-art/${art.id}`}
+              state={{ fromIndex: currentIndex }}
               className="text-gray-800 underline hover:text-black transition font-normal text-sm"
             >
               View
@@ -72,5 +84,7 @@ const VisualArts = () => {
     </div>
   );
 };
+
+//export the component for use in other parts of the application
 
 export default VisualArts;

@@ -1,13 +1,23 @@
 import React from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
-import { visualArtsProjects } from "../data";
+import { useParams, useNavigate, Link, useLocation } from "react-router-dom";  //import routing utilities from react-router-dom
+import { visualArtsProjects } from "../data"; //import the visual arts data from data.json
 
 const ViewArt = () => {
-  const { id } = useParams(); // get the artwork id from the url
-  const navigate = useNavigate(); // useNavigate replaces useHistory in React Router v6
-  const art = visualArtsProjects.find((item) => item.id === parseInt(id)); // find the artwork
+  // get the artwork id from the url
+  const { id } = useParams();  
 
-  // handle case when no artwork is found
+  //hook for programmatic navigation (replaces useHistory in react router v6)
+  const navigate = useNavigate();
+
+  //find the artwork whose id matches the url parameter
+  //parseInt is used because url params are strings
+  const art = visualArtsProjects.find((item) => item.id === parseInt(id));
+
+  const location = useLocation();
+  const fromIndex = location.state?.fromIndex;
+
+  // handle the case where the artwork does not exist
+  //prevents rendering errors and improves user feedback
   if (!art) {
     return (
       <div className="min-h-[200px] flex items-center justify-center text-red-500">
@@ -44,7 +54,7 @@ const ViewArt = () => {
       {/* Back Button with Icon + Text */}
       <div className="flex justify-center mt-12 mb-12">
         <button
-          onClick={() => navigate(-1)} // navigate back
+          onClick={() => navigate("/", { state: { restoreIndex: fromIndex } })} // navigate back
           className="flex items-center gap-2 text-gray-800 hover:text-black px-6 py-3 shadow-sm transition"
           aria-label="Go back"
         >

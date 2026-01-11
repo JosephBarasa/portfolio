@@ -136,28 +136,30 @@ const Home = () => {
           </div>
         </section>
 
-      {/* ---------- Catalogue Section ---------- */}
+        {/* ---------- Catalogue Section ---------- */}
 
-      <div className="w-full max-w-6xl mx-auto mt-5 md:mt-10 grid grid-cols-1 md:grid-cols-2 gap-12 px-4 z-10">
+        <section className="bg-neutral-200 w-full min-h-screen py-10 items-center justify-center relative">
+          <div className="w-full max-w-6xl mx-auto mt-5 md:mt-10 grid grid-cols-1 md:grid-cols-2 gap-12 px-4 z-10">
 
-        {/* Software Development Component Section */}
-        {(
-          <div className="py-4">
-            <h3 className="text-center text-xl font-bold text-gray-800 mb-1 pb-2 border-gray-300">Web Development</h3>
-            <SoftwareDev />
-            
+            {/* Software Development Component Section */}
+            {(
+              <div className="py-4">
+                <h3 className="text-center text-xl font-bold text-gray-800 mb-1 pb-2 border-gray-300">Web Development</h3>
+                <SoftwareDev />
+                
+              </div>
+            )}
+
+            {/* Visual Arts Component Section */}
+            {(
+              <div className="py-4">
+                <h3 className="text-center text-xl font-bold text-gray-800 pb-2 border-gray-300">Visual Arts</h3>
+                <VisualArts />
+                
+              </div>
+            )}
           </div>
-        )}
-
-        {/* Visual Arts Component Section */}
-        {(
-          <div className="py-4">
-            <h3 className="text-center text-xl font-bold text-gray-800 pb-2 border-gray-300">Visual Arts</h3>
-            <VisualArts />
-            
-          </div>
-        )}
-      </div>
+        </section>
 
     </section>
   );
