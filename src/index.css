@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Global layout + typography */
+body {
+  @apply bg-neutral-900 text-neutral-100 antialiased;
+}
+
+#root {
+  @apply min-h-screen;
+}
+
+/* Smooth scrolling for a more polished feel */
+html {
+  scroll-behavior: smooth;
+}

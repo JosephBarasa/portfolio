@@ -55,29 +55,32 @@ const ContactMe = () => {
   };
 
   return (
-    <section className="min-h-screen bg-gray-200 py-16 flex flex-col items-center justify-center px-4">
-      <div className="container mx-auto max-w-4xl">
-        <h1 className="text-4xl md:text-5xl font-light text-center text-gray-900 mb-6">
+    <section className="min-h-screen bg-neutral-950 py-16 flex flex-col items-center justify-center px-4">
+      <div className="page-container max-w-5xl">
+        <h1 className="text-4xl md:text-5xl font-light text-center text-neutral-50 mb-2">
           Talk To Me
         </h1>
-        <div className="bg-gray-200 p-8 rounded-lg shadow-xl grid grid-cols-1 md:grid-cols-2 gap-10">
+        <p className="text-sm text-neutral-400 text-center mb-10 max-w-md mx-auto">
+          Whether it is a project, a commission, or a quiet idea you are still figuring out — I would love to hear it.
+        </p>
+        <div className="bg-neutral-900/70 border border-neutral-800 rounded-3xl shadow-[0_22px_60px_rgba(15,23,42,0.7)] grid grid-cols-1 md:grid-cols-2 gap-10 p-8 md:p-10 backdrop-blur">
           {/* Contact Form */}
           <div>
-            <h2 className="text-2xl font-light text-gray-800 mb-4">Share Your Thoughts</h2>
+            <h2 className="text-2xl font-light text-neutral-50 mb-4">Share Your Thoughts</h2>
             {submitStatus === 'success' && (
-              <p className="text-green-900 font-medium mb-4">
+              <p className="text-emerald-300 font-medium mb-4">
                 Your note has found its place — I’ll respond soon.
               </p>
             )}
             {submitStatus === 'error' && (
-              <p className="text-red-600 font-medium mb-4">
+              <p className="text-red-400 font-medium mb-4">
                 Oops! Something went wrong. Please try again later or contact me directly.
               </p>
             )}
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="name" className="block text-xs font-medium tracking-wide text-neutral-300 mb-1">
                   Name <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -86,13 +89,13 @@ const ContactMe = () => {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md"
+                  className="w-full px-4 py-2 rounded-lg border border-neutral-700 bg-neutral-900/40 text-neutral-50 placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-neutral-400/80"
                   disabled={isSubmitting}
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="email" className="block text-xs font-medium tracking-wide text-neutral-300 mb-1">
                   Email <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -101,13 +104,13 @@ const ContactMe = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md"
+                  className="w-full px-4 py-2 rounded-lg border border-neutral-700 bg-neutral-900/40 text-neutral-50 placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-neutral-400/80"
                   disabled={isSubmitting}
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="message" className="block text-xs font-medium tracking-wide text-neutral-300 mb-1">
                   Message <span className="text-red-500">*</span>
                 </label>
                 <textarea
@@ -116,14 +119,14 @@ const ContactMe = () => {
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md resize-y"
+                  className="w-full px-4 py-2 rounded-lg border border-neutral-700 bg-neutral-900/40 text-neutral-50 placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-neutral-400/80 resize-y"
                   disabled={isSubmitting}
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full px-8 py-3 border border-black text-black font-light hover:bg-black hover:text-white transition-all duration-300"
+                className="w-full px-8 py-3 rounded-full border border-neutral-100 bg-neutral-50 text-neutral-900 text-sm font-medium hover:bg-white hover:border-white transition-all duration-300"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? 'Sending...' : 'Send Message'}
@@ -132,20 +135,20 @@ const ContactMe = () => {
           </div>
 
           {/* Other contact options */}
-          <div className="md:border-l md:border-gray-200 md:pl-10">
-            <h2 className="text-2xl font-light text-gray-800 mb-4">Find Me Beyond The Form</h2>
+          <div className="md:border-l md:border-neutral-800 md:pl-10">
+            <h2 className="text-2xl font-light text-neutral-50 mb-4">Find Me Beyond The Form</h2>
             <div className="space-y-3">
-              <p className="text-gray-600">
+              <p className="text-neutral-400 text-sm">
                 Direct Contacts :
               </p>
 
               <div>
-                <h3 className="text-lg font-medium text-gray-800">WhatsApp</h3>
+                <h3 className="text-sm font-medium text-neutral-100">WhatsApp</h3>
                 <a
                   href="https://wa.me/254790463858"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-gray-800 hover:underline"
+                  className="flex items-center gap-2 text-neutral-200 hover:text-white hover:underline text-sm"
                 >
                   <MessageCircle className="w-5 h-5" />
                   Message on WhatsApp
@@ -153,31 +156,31 @@ const ContactMe = () => {
               </div>
 
               <div>
-                <h3 className="text-lg font-medium text-gray-800">Email</h3>
-                <a href="mailto:josephbarasa622@gmail.com" className="text-gray-800 hover:underline">
+                <h3 className="text-sm font-medium text-neutral-100">Email</h3>
+                <a href="mailto:josephbarasa622@gmail.com" className="text-neutral-200 hover:text-white hover:underline text-sm">
                   josephbarasa622@gmail.com
                 </a>
               </div>
 
               <div>
-                <h3 className="text-lg font-medium text-gray-800">LinkedIn</h3>
+                <h3 className="text-sm font-medium text-neutral-100">LinkedIn</h3>
                 <a
                   href="https://www.linkedin.com/in/joseph-barasa-0270972a9/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-800 hover:underline"
+                  className="text-neutral-200 hover:text-white hover:underline text-sm"
                 >
                   linkedin.com/in/joseph-barasa-0270972a9
                 </a>
               </div>
 
               <div>
-                <h3 className="text-lg font-medium text-gray-800">GitHub</h3>
+                <h3 className="text-sm font-medium text-neutral-100">GitHub</h3>
                 <a
                   href="https://github.com/JosephBarasa"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-800 hover:underline"
+                  className="text-neutral-200 hover:text-white hover:underline text-sm"
                 >
                   github.com/JosephBarasa
                 </a>
@@ -186,11 +189,10 @@ const ContactMe = () => {
           </div>
         </div>
 
-        {/* ✅ Fixed Back Button */}
         <div className="flex justify-center mt-10">
           <button
             onClick={() => navigate(-1)} // ✅ Correct way in v6
-            className="flex items-center text-black hover:underline transition"
+            className="flex items-center text-neutral-300 hover:text-white hover:underline text-sm transition"
           >
             <ArrowLeft className="w-5 h-5 mr-1" />
             <span className="text-md">Back</span>

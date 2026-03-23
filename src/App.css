@@ -1,3 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.app-wrapper {
+  @apply min-h-screen bg-gradient-to-b from-neutral-900 via-neutral-950 to-neutral-900 text-neutral-100;
+}
+
+/* Subtle layout constraint for all main sections */
+.page-container {
+  @apply max-w-6xl mx-auto px-4;
+}
