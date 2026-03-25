@@ -4,7 +4,6 @@ import Home from './components/Home';
 import ContactMe from './components/ContactMe';
 import Footer from './components/Footer';
 import ViewArt from './components/ViewArt';
-import AboutMe from './components/AboutMe';
 import { HashRouter as Router, Route, Routes, useLocation} from 'react-router-dom';
 
 // app content handles the page structure eg navbar, footer
@@ -29,7 +28,6 @@ const AppContent = () => {
 
       </Routes>
 
-      <AboutMe />
 
       {/* Show footer conditionally */}
       {!shouldHideFooter && <Footer />}

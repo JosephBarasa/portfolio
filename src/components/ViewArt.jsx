@@ -1,99 +1,139 @@
-import React from "react";
-import { useParams, useNavigate, Link, useLocation } from "react-router-dom";  //import routing utilities from react-router-dom
-import { visualArtsProjects } from "../data"; //import the visual arts data from data.json
+import React, { useState } from "react";
+import { useParams, useNavigate, Link, useLocation } from "react-router-dom";
+import { visualArtsProjects } from "../data";
 
 const ViewArt = () => {
-  // get the artwork id from the url
-  const { id } = useParams();  
-
-  //hook for programmatic navigation (replaces useHistory in react router v6)
+  const { id } = useParams();
   const navigate = useNavigate();
-
-  //find the artwork whose id matches the url parameter
-  //parseInt is used because url params are strings
-  const art = visualArtsProjects.find((item) => item.id === parseInt(id));
-
   const location = useLocation();
-  const fromIndex = location.state?.fromIndex;
 
-  // handle the case where the artwork does not exist
-  //prevents rendering errors and improves user feedback
+  const [isOpen, setIsOpen] = useState(false);
+
+  const fromIndex = location.state?.fromIndex ?? 0;
+
+  const art = visualArtsProjects.find(
+    (item) => item.id === parseInt(id)
+  );
+
   if (!art) {
     return (
-      <div className="min-h-[200px] flex items-center justify-center text-red-500">
+      <div className="min-h-screen flex items-center justify-center text-neutral-500">
         Artwork not found.
       </div>
     );
   }
 
   return (
-    <>
-      <div className="min-h-[70vh] flex items-center justify-center px-4 py-10 bg-neutral-950">
-        <div className="page-container">
-          <div className="max-w-3xl mx-auto rounded-3xl border border-neutral-800 bg-neutral-900/80 shadow-[0_22px_60px_rgba(15,23,42,0.6)] overflow-hidden">
-            <div className="flex flex-col md:flex-row">
-              {/* Image side */}
-              <div className="md:w-1/2 bg-black/60">
-                <img
-                  src={art.image}
-                  alt={art.title}
-                  className="h-full w-full object-cover"
-                />
-              </div>
+    <section className="min-h-screen w-full bg-neutral-950 text-white relative overflow-hidden">
 
-              {/* Details side */}
-              <div className="md:w-1/2 p-6 sm:p-8 flex flex-col justify-between">
-                <div>
-                  <p className="text-xs uppercase tracking-[0.3em] text-neutral-400 mb-2">
-                    Visual Art
-                  </p>
-                  <h2 className="text-2xl sm:text-3xl font-light text-neutral-50 mb-2">
-                    {art.title}
-                  </h2>
-                  <p className="text-sm text-neutral-400 mb-6">
-                    {art.category} • {art.year}
-                  </p>
+      {/* FULLSCREEN IMAGE VIEWER */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 z-[999] bg-black/95 flex items-center justify-center cursor-zoom-out"
+          onClick={() => setIsOpen(false)}
+        >
+          <img
+            src={art.image}
+            alt={art.title}
+            className="max-h-[90vh] max-w-[90vw] object-contain"
+          />
 
-                  <p className="text-base text-neutral-200">
-                    <span className="text-xs uppercase tracking-[0.25em] text-neutral-500 block mb-1">
-                      Price
-                    </span>
-                    <span className="text-lg font-medium">KES {art.price}</span>
-                  </p>
-                </div>
+          {/* Close button */}
+          <button
+            className="absolute top-6 right-6 text-white text-xs tracking-widest uppercase hover:opacity-70"
+            onClick={() => setIsOpen(false)}
+          >
+            Close
+          </button>
+        </div>
+      )}
 
-                <div className="mt-8 flex flex-col gap-3">
-                  <Link
-                    to="/contact-me"
-                    className="inline-flex items-center justify-center rounded-full border border-neutral-100 bg-neutral-50 text-neutral-900 text-sm font-medium px-6 py-2.5 hover:bg-white hover:border-white transition-colors"
-                  >
-                    Get Yours
-                  </Link>
+      {/* Ambient lighting */}
+      <div className="absolute inset-0 pointer-events-none opacity-40">
+        <div className="absolute top-20 left-1/4 w-40 h-40 bg-neutral-700/30 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-1/4 w-52 h-52 bg-neutral-800/40 rounded-full blur-3xl" />
+      </div>
 
-                  <button
-                    onClick={() => navigate("/", { state: { restoreIndex: fromIndex } })}
-                    className="inline-flex items-center justify-center text-xs text-neutral-400 hover:text-neutral-200 transition-colors gap-1.5"
-                    aria-label="Go back"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-4 w-4"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-                    </svg>
-                    <span>Back to catalogue</span>
-                  </button>
-                </div>
-              </div>
+      <div className="page-container relative z-10 py-20">
+
+        {/* TOP BAR */}
+        <div className="flex justify-between items-center mb-12 text-xs text-neutral-500 tracking-[0.25em] uppercase">
+          <span>Artwork</span>
+
+          <button
+            onClick={() =>
+              navigate("/", { state: { restoreIndex: fromIndex } })
+            }
+            className="hover:text-white transition-colors"
+          >
+            Back
+          </button>
+        </div>
+
+        {/* MAIN GRID */}
+        <div className="grid md:grid-cols-2 gap-16 items-center">
+
+          {/* IMAGE */}
+          <div className="w-full">
+            <div
+              className="relative overflow-hidden cursor-zoom-in group"
+              onClick={() => setIsOpen(true)}
+            >
+              <img
+                src={art.image}
+                alt={art.title}
+                className="w-full h-full object-cover max-h-[75vh] transition-transform duration-500 group-hover:scale-[1.03]"
+              />
+
+              {/* subtle overlay */}
+              <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition" />
+            </div>
+
+            <p className="text-xs text-neutral-500 mt-3">
+              Click image to view full size
+            </p>
+          </div>
+
+          {/* DETAILS */}
+          <div className="space-y-8 max-w-md">
+
+            <div>
+              <p className="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-3">
+                {art.category}
+              </p>
+
+              <h1 className="text-4xl md:text-5xl font-light tracking-tight mb-3">
+                {art.title}
+              </h1>
+
+              <p className="text-sm text-neutral-500">
+                {art.year}
+              </p>
+            </div>
+
+            <div className="h-px w-16 bg-neutral-700" />
+
+            <div>
+              <p className="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-2">
+                Price
+              </p>
+              <p className="text-lg text-neutral-200">
+                KES {art.price}
+              </p>
+            </div>
+
+            <div className="pt-4">
+              <Link
+                to="/contact-me"
+                className="inline-flex items-center justify-center border border-neutral-700 px-6 py-2 text-sm text-neutral-200 hover:bg-white hover:text-black transition-all"
+              >
+                Get Yours
+              </Link>
             </div>
           </div>
         </div>
       </div>
-    </>
+    </section>
   );
 };
 
