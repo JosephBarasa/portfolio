@@ -2,7 +2,6 @@ import octopizzo from './assets/art/octopizzo.jpg';
 import fyahMummah from './assets/art/fyahMummah.jpg';
 import stillLife from './assets/art/stillLife.jpg';
 import littleGrebe from './assets/art/littleGrebe.jpg';
-import africanStuff from './assets/art/africanStuff.jpg';
 import darkTwistedFantasy from './assets/art/darkTwistedFantasy.jpg';
 import lilBird from './assets/art/lilBird.jpg';
 import pretty from './assets/art/pretty.jpg';
