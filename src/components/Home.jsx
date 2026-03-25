@@ -40,7 +40,7 @@ const Home = () => {
               <p className="text-xs uppercase tracking-[0.3em] text-neutral-400">
                 JB
               </p>
-              <h1 className="text-[5rem] md:text-[9rem] lg:text-[12rem] xl:text-[14rem] font-extrabold tracking-tight leading-[0.9] text-neutral-100 w-full">
+              <h1 className="text-[8rem] md:text-[9rem] lg:text-[15rem] xl:text-[15rem] font-extrabold tracking-tight leading-[0.9] text-neutral-100 w-full">
                 VISUAL ARTIST
               </h1>
               <div className="h-px w-20 bg-neutral-500/60 mx-auto"></div>
