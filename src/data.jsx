@@ -57,15 +57,6 @@ export const visualArtsProjects = [
 
     {
         id: 6,
-        title: "Patterns",
-        category: "decorate your space",
-        year: 2024,
-        price: "300",
-        image: africanStuff
-    },
-
-    {
-        id: 7,
         title: "Dark Twisted Fantasy",
         category: "decorate your space",
         year: 2024,
@@ -74,7 +65,7 @@ export const visualArtsProjects = [
     },
 
     {
-        id: 8,
+        id: 7,
         title: "Lil Bird",
         category: "decorate your space",
         year: 2024,
