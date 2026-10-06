@@ -39,21 +39,16 @@ const About = () => {
           
           {/* LEFT — TEXT BLOCK */}
           <div className="space-y-6">
-            <p className="text-sm uppercase tracking-[0.3em] text-neutral-500">
-              Visual Artist
-            </p>
 
-            <h3 className="text-5xl md:text-7xl font-extrabold leading-[0.9] tracking-tight">
+            <h5 className="text-2xl md:text-4xl font-bold leading-[0.9] tracking-tight">
               JB
-            </h3>
+            </h5>
 
             <p className="text-neutral-300 text-base leading-relaxed max-w-md">
-              Rooted in a self-taught journey and a God-given calling, 
-              my work reflects purpose and personal conviction. 
-              Each piece is part of an ongoing search—an attempt to understand my voice, 
-              my direction, and the style I am still becoming. 
-              I remain grateful to everyone who has supported me along the way; 
-              your belief continues to shape this journey.
+              A self-taught artist driven by curiosity, faith, 
+              and the desire to create work that carries meaning beyond the canvas. 
+              At the heart of it all is a God-given calling and a commitment to creating with purpose, authenticity, and passion.
+              <em><strong>I paint, so you don't have dull spaces.</strong></em>
             </p>
 
             <p className="text-neutral-500 text-sm italic">

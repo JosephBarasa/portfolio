@@ -19,7 +19,7 @@ const Home = () => {
   };
 
   return (
-    <section className="min-h-screen w-full flex flex-col items-center text-neutral-50 relative overflow-x-hidden">
+    <main className="min-h-screen w-full flex flex-col items-center text-neutral-50 relative overflow-x-hidden">
 
       {/* Background accents */}
       <div className="absolute inset-0 opacity-60 pointer-events-none">
@@ -28,7 +28,7 @@ const Home = () => {
         <div className="absolute bottom-0 right-1/4 h-64 w-64 bg-sky-500/10 rounded-full blur-3xl" />
       </div>
 
-      {/* HERO */}
+      {/* HERO SECTION */}
       <section className="min-h-[80vh] w-full flex items-center justify-center px-6 relative">
         <div
           className={`page-container flex flex-col items-center text-center mb-24 mt-20 space-y-10 z-10
@@ -47,10 +47,6 @@ const Home = () => {
 
             <div className="h-px w-20 bg-neutral-500/60 mx-auto"></div>
           </div>
-
-          <p className="text-base md:text-lg font-light text-neutral-300 max-w-xl">
-            Been 5 years now doing this. Welcome to my digital gallery.
-          </p>
 
           {/* buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-4">
@@ -76,10 +72,10 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ---------- ART CATALOGUE ---------- */}
+      {/* PROJECT CATALOGUE SECTION */}
       <section
         id="catalogue"
-        className="w-full py-24 bg-neutral-950 text-white relative"
+        className="w-full scroll-mt-20 py-24 bg-neutral-950 text-white relative"
       >
         {/* subtle background */}
         <div className="absolute inset-0 opacity-40 pointer-events-none">
@@ -111,12 +107,12 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ---------- ABOUT ---------- */}
-      <section className="w-full">
+      {/* ABOUT ARTIST SECTION */}
+      <section id="about" className="w-full scroll-mt-20">
         <AboutMe />
       </section>
 
-    </section>
+    </main>
   );
 };
 
