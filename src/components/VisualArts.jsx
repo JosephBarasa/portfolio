@@ -11,7 +11,7 @@ const VisualArts = () => {
 
   const totalArtworks = visualArtsProjects.length;
 
-  // 🔥 CRITICAL FIX: update index when returning from ViewArt
+  // update index when returning from ViewArt
   useEffect(() => {
     if (location.state?.restoreIndex !== undefined) {
       setCurrentIndex(location.state.restoreIndex);

@@ -11,7 +11,7 @@ const AppContent = () => {
   const location = useLocation();  // gives access to the current url path
 
   // Paths where Footer should not show
-  const hideFooterPaths = ['/chat-bot', '/contact-me'];
+  const hideFooterPaths = ['/contact-me'];
   const shouldHideFooter =
     location.pathname.startsWith('/view-art') || hideFooterPaths.includes(location.pathname);
 
