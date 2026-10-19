@@ -1,8 +1,16 @@
+/* Main application wrapper */
+
 .app-wrapper {
-  @apply min-h-screen bg-gradient-to-b from-neutral-900 via-neutral-950 to-neutral-900 text-neutral-100;
+min-height: 100vh;
+background-color: var(--color-background);
+color: var(--color-text);
 }
 
-/* Subtle layout constraint for all main sections */
+/* Consistent width and horizontal spacing for page sections */
+
 .page-container {
-  @apply max-w-6xl mx-auto px-4;
+width: 100%;
+max-width: 1280px;
+margin-inline: auto;
+padding-inline: var(--page-padding);
 }

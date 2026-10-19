@@ -1,139 +1,252 @@
-import React, { useState } from "react";
-import { useParams, useNavigate, Link, useLocation } from "react-router-dom";
-import { visualArtsProjects } from "../data";
+import { useState, useEffect } from 'react';
+import { useParams, useNavigate, Link, useLocation } from 'react-router-dom';
+import { getArtworkById } from '../services/artworkService';
 
 const ViewArt = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
 
+  const [art, setArt] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
 
   const fromIndex = location.state?.fromIndex ?? 0;
 
-  const art = visualArtsProjects.find(
-    (item) => item.id === parseInt(id)
-  );
+  // Fetch the selected artwork from the existing backend API.
+  useEffect(() => {
+    const loadArtwork = async () => {
+      try {
+        setIsLoading(true);
+        setError(null);
 
-  if (!art) {
+        const data = await getArtworkById(id);
+        setArt(data);
+      } catch (err) {
+        console.error('Failed to load artwork:', err);
+        setError(err.message || 'Unable to load artwork.');
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadArtwork();
+  }, [id]);
+
+  // Close the fullscreen viewer with the Escape key.
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    // Remove the event listener when the viewer closes or the page unmounts.
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isOpen]);
+
+  // Loading state.
+  if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center text-neutral-500">
-        Artwork not found.
-      </div>
+      <main className="flex min-h-[70vh] items-center justify-center bg-[#faf9f6] px-6">
+        <p className="text-sm text-neutral-500" role="status">
+          Loading artwork...
+        </p>
+      </main>
     );
   }
 
-  return (
-    <section className="min-h-screen w-full bg-neutral-950 text-white relative overflow-hidden">
+  // Error or missing artwork state.
+  if (error || !art) {
+    return (
+      <main className="flex min-h-[70vh] flex-col items-center justify-center gap-5 bg-[#faf9f6] px-6 text-center">
+        <p className="text-sm text-neutral-600" role="alert">
+          {error || 'Artwork not found.'}
+        </p>
 
-      {/* FULLSCREEN IMAGE VIEWER */}
+        <button
+          type="button"
+          onClick={() =>
+            navigate('/', { state: { restoreIndex: fromIndex } })
+          }
+          className="border-b border-neutral-400 pb-1 text-sm text-neutral-800 transition-colors hover:border-neutral-900"
+        >
+          Return to catalogue
+        </button>
+      </main>
+    );
+  }
+
+  // Format the price using Kenyan number formatting.
+  const formattedPrice =
+    art.price !== null && art.price !== undefined
+      ? `KES ${Number(art.price).toLocaleString('en-KE', {
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 2,
+        })}`
+      : 'Price unavailable';
+
+  // Use the image URL returned by the backend.
+  const imageUrl = art.image;
+
+  return (
+    <main className="min-h-screen w-full bg-[#faf9f6] text-neutral-900">
+      {/* Fullscreen image viewer */}
       {isOpen && (
         <div
-          className="fixed inset-0 z-[999] bg-black/95 flex items-center justify-center cursor-zoom-out"
+          className="fixed inset-0 z-[999] flex items-center justify-center bg-black/95 p-4 sm:p-8"
           onClick={() => setIsOpen(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-label={`Full-size view of ${art.title}`}
         >
           <img
-            src={art.image}
+            src={imageUrl}
             alt={art.title}
-            className="max-h-[90vh] max-w-[90vw] object-contain"
+            className="max-h-[88vh] max-w-[92vw] object-contain"
+            onClick={(event) => event.stopPropagation()}
           />
 
-          {/* Close button */}
           <button
-            className="absolute top-6 right-6 text-white text-xs tracking-widest uppercase hover:opacity-70"
+            type="button"
             onClick={() => setIsOpen(false)}
+            className="absolute right-5 top-5 border border-white/30 px-4 py-2 text-xs uppercase tracking-[0.2em] text-white transition-colors hover:bg-white hover:text-black sm:right-8 sm:top-8"
+            aria-label="Close full-size image"
           >
-            Close
+            Close <span aria-hidden="true">×</span>
           </button>
         </div>
       )}
 
-      {/* Ambient lighting */}
-      <div className="absolute inset-0 pointer-events-none opacity-40">
-        <div className="absolute top-20 left-1/4 w-40 h-40 bg-neutral-700/30 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-1/4 w-52 h-52 bg-neutral-800/40 rounded-full blur-3xl" />
-      </div>
-
-      <div className="page-container relative z-10 py-20">
-
-        {/* TOP BAR */}
-        <div className="flex justify-between items-center mb-12 text-xs text-neutral-500 tracking-[0.25em] uppercase">
-          <span>Artwork</span>
-
-          <button
-            onClick={() =>
-              navigate("/", { state: { restoreIndex: fromIndex } })
-            }
-            className="hover:text-white transition-colors"
-          >
-            Back
-          </button>
-        </div>
-
-        {/* MAIN GRID */}
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-
-          {/* IMAGE */}
-          <div className="w-full">
-            <div
-              className="relative overflow-hidden cursor-zoom-in group"
-              onClick={() => setIsOpen(true)}
-            >
-              <img
-                src={art.image}
-                alt={art.title}
-                className="w-full h-full object-cover max-h-[75vh] transition-transform duration-500 group-hover:scale-[1.03]"
-              />
-
-              {/* subtle overlay */}
-              <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition" />
-            </div>
-
-            <p className="text-xs text-neutral-500 mt-3">
-              Click image to view full size
+      <div className="page-container py-10 sm:py-14 md:py-16">
+        {/* Top navigation */}
+        <div className="mb-10 flex items-center justify-between border-b border-[#e5e2dc] pb-5 sm:mb-14">
+          <div>
+            <p className="text-[11px] uppercase tracking-[0.25em] text-neutral-500">
+              The collection
             </p>
           </div>
 
-          {/* DETAILS */}
-          <div className="space-y-8 max-w-md">
+          <button
+            type="button"
+            onClick={() =>
+              navigate('/', { state: { restoreIndex: fromIndex } })
+            }
+            className="inline-flex items-center gap-2 text-sm text-neutral-600 transition-colors hover:text-neutral-950"
+          >
+            <span aria-hidden="true">←</span>
+            Back to catalogue
+          </button>
+        </div>
 
-            <div>
-              <p className="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-3">
-                {art.category}
+        {/* Artwork and details */}
+        <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-[minmax(0,1.3fr)_minmax(280px,0.7fr)] md:gap-14 lg:gap-20">
+          {/* Artwork image */}
+          <div className="min-w-0">
+            <button
+              type="button"
+              onClick={() => setIsOpen(true)}
+              className="group relative flex min-h-[300px] w-full items-center justify-center overflow-hidden bg-[#f0eee9] sm:min-h-[420px] md:min-h-[520px]"
+              aria-label={`Enlarge ${art.title}`}
+            >
+              <img
+                src={imageUrl}
+                alt={art.title}
+                className="max-h-[75vh] w-full object-contain transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+              />
+
+              <span className="absolute bottom-4 right-4 bg-white/95 px-3 py-2 text-xs text-neutral-700 transition-colors group-hover:bg-white">
+                Enlarge image <span aria-hidden="true">↗</span>
+              </span>
+            </button>
+
+            <p className="mt-3 text-xs text-neutral-500">
+              Original artwork · Click to view full size
+            </p>
+          </div>
+
+          {/* Artwork information */}
+          <div className="flex min-w-0 flex-col pt-2 md:sticky md:top-28 md:pt-8">
+            <p className="mb-4 text-xs uppercase tracking-[0.22em] text-[#8a735c]">
+              {art.medium || 'Original artwork'}
+            </p>
+
+            <h1 className="font-serif text-4xl font-normal leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+              {art.title}
+            </h1>
+
+            {art.year_created && (
+              <p className="mt-4 text-sm text-neutral-500">
+                Created in {art.year_created}
               </p>
+            )}
 
-              <h1 className="text-4xl md:text-5xl font-light tracking-tight mb-3">
-                {art.title}
-              </h1>
+            <div className="my-8 h-px w-16 bg-[#8a735c]" />
 
-              <p className="text-sm text-neutral-500">
-                {art.year}
+            {art.description ? (
+              <div>
+                <h2 className="mb-3 text-xs uppercase tracking-[0.2em] text-neutral-500">
+                  About this artwork
+                </h2>
+
+                <p className="whitespace-pre-line text-sm leading-7 text-neutral-600">
+                  {art.description}
+                </p>
+              </div>
+            ) : (
+              <p className="text-sm leading-7 text-neutral-500">
+                An original piece from the collection.
               </p>
-            </div>
+            )}
 
-            <div className="h-px w-16 bg-neutral-700" />
-
-            <div>
-              <p className="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-2">
+            {/* Price and contact action */}
+            <div className="mt-10 border-t border-[#e5e2dc] pt-6">
+              <p className="mb-2 text-xs uppercase tracking-[0.2em] text-neutral-500">
                 Price
               </p>
-              <p className="text-lg text-neutral-200">
-                KES {art.price}
-              </p>
-            </div>
 
-            <div className="pt-4">
+              <p className="text-xl font-normal text-neutral-900">
+                {formattedPrice}
+              </p>
+
               <Link
                 to="/contact-me"
-                className="inline-flex items-center justify-center border border-neutral-700 px-6 py-2 text-sm text-neutral-200 hover:bg-white hover:text-black transition-all"
+                className="mt-7 inline-flex w-full items-center justify-center gap-3 bg-neutral-900 px-6 py-4 text-sm text-white transition-colors hover:bg-neutral-700 sm:w-auto"
               >
-                Get Yours
+                Enquire about this piece
+                <span aria-hidden="true">↗</span>
               </Link>
+
+              <p className="mt-4 text-xs leading-6 text-neutral-500">
+                Interested in this artwork? Get in touch to discuss
+                availability and purchase details.
+              </p>
             </div>
           </div>
         </div>
+
+        {/* Bottom navigation */}
+        <div className="mt-16 border-t border-[#e5e2dc] pt-6 sm:mt-24">
+          <button
+            type="button"
+            onClick={() =>
+              navigate('/', { state: { restoreIndex: fromIndex } })
+            }
+            className="inline-flex items-center gap-3 text-sm text-neutral-600 transition-colors hover:text-neutral-950"
+          >
+            <span aria-hidden="true">←</span>
+            Return to the collection
+          </button>
+        </div>
       </div>
-    </section>
+    </main>
   );
 };
 

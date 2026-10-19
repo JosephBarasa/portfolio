@@ -1,108 +1,134 @@
-import grad from "../assets/artist/grad.jpeg"; 
-import artist from "../assets/artist/artist.jpg";
-import clouds from "../assets/artist/clouds.jpg";
-import JB5 from "../assets/artist/JB5.jpg";
-import artist2 from "../assets/artist/artist2.jpg";
+import grad from '../assets/artist/grad.jpeg';
+import artist from '../assets/artist/artist.jpg';
+import clouds from '../assets/artist/clouds.jpg';
+import JB5 from '../assets/artist/JB5.jpg';
+import artist2 from '../assets/artist/artist2.jpg';
 
-const About = () => {
+const AboutMe = () => {
   return (
-    <section className="w-full py-24 bg-neutral-950 text-white relative overflow-hidden">
-      
-      {/* Background */}
-      <div className="absolute inset-0 opacity-40">
-        <img
-          src={grad}
-          alt="Background"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-neutral-950 via-neutral-950/80 to-neutral-950" />
-      </div>
+    <section className="w-full overflow-hidden bg-[#faf9f6] py-20 text-neutral-900 sm:py-24 md:py-32">
+      <div className="page-container">
+        {/* Section heading */}
+        <div className="mb-14 grid gap-6 md:mb-20 md:grid-cols-2 md:items-end">
+          <div>
+            <div className="mb-5 flex items-center gap-3">
+              <span className="h-px w-10 bg-[#8a735c]" />
 
-      {/* Content Container */}
-      <div className="page-container relative z-10">
-        
-        {/* Header */}
-        <div className="text-center mb-20">
-          <p className="text-xs uppercase tracking-[0.3em] text-neutral-500">
-            About
-          </p>
-          <h2 className="text-3xl md:text-5xl font-light text-white mt-2">
-            The Artist
-          </h2>
-          <p className="mt-4 text-sm text-neutral-400 max-w-md mx-auto">
-            For context — I create for the same people I am.
-          </p>
-        </div>
+              <p className="text-xs uppercase tracking-[0.25em] text-neutral-500">
+                A little about me
+              </p>
+            </div>
 
-        {/* Main Layout */}
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          
-          {/* LEFT — TEXT BLOCK */}
-          <div className="space-y-6">
-
-            <h5 className="text-2xl md:text-4xl font-bold leading-[0.9] tracking-tight">
-              JB
-            </h5>
-
-            <p className="text-neutral-300 text-base leading-relaxed max-w-md">
-              A self-taught artist driven by curiosity, faith, 
-              and the desire to create work that carries meaning beyond the canvas. 
-              At the heart of it all is a God-given calling and a commitment to creating with purpose, authenticity, and passion.
-              <em><strong>I paint, so you don't have dull spaces.</strong></em>
-            </p>
-
-            <p className="text-neutral-500 text-sm italic">
-              "For This Little Thing Of Ours"
-            </p>
+            <h2 className="font-serif text-5xl font-normal leading-tight tracking-tight sm:text-6xl md:text-7xl">
+              The person
+              <br />
+              <span className="italic text-[#8a735c]">behind the work.</span>
+            </h2>
           </div>
 
-          {/* RIGHT — IMAGE COMPOSITION */}
-          <div className="relative h-[500px]">
-            
-            {/* Main Image */}
-            <div className="absolute top-0 left-10 w-64 md:w-80 shadow-2xl">
+          {/* <p className="max-w-md text-sm leading-7 text-neutral-600 md:justify-self-end md:text-base md:leading-8">
+            For context — I create for the same people I am. My work is shaped
+            by curiosity, experience, faith, and a desire to make things that
+            mean something.
+          </p> */}
+        </div>
+
+        {/* Main content */}
+        <div className="grid items-center gap-14 md:grid-cols-2 md:gap-16 lg:gap-24">
+          {/* Image composition */}
+          <div className="relative mx-auto w-full max-w-[540px]">
+            {/* Main image */}
+            <div className="relative z-10 ml-[8%] w-[68%]">
               <img
                 src={artist}
-                alt="Main"
-                className="w-full h-full object-cover border border-white/10"
+                alt="Joseph Barasa in his creative environment"
+                className="aspect-[4/5] w-full object-cover"
+                loading="lazy"
               />
+
+              <div className="absolute -bottom-4 -right-4 -z-10 h-full w-full border border-[#d8cfc3]" />
             </div>
 
-            {/* Secondary (Grayscale mood) */}
-            <div className="absolute bottom-0 left-0 w-56 md:w-72 -rotate-6 shadow-xl">
+            {/* Secondary image */}
+            {/* <div className="absolute bottom-[4%] left-0 z-20 w-[43%] -rotate-3 sm:bottom-[2%]">
               <img
                 src={clouds}
-                alt="Clouds"
-                className="w-full object-cover grayscale contrast-125 border border-white/10"
+                alt="Cloud formations that inspire creative exploration"
+                className="aspect-[4/5] w-full border-4 border-[#faf9f6] object-cover grayscale"
+                loading="lazy"
               />
-            </div>
+            </div> */}
 
-            {/* Tall portrait */}
-            <div className="absolute top-10 right-0 w-40 md:w-52 rotate-3 shadow-xl">
+            {/* Portrait */}
+            {/* <div className="absolute right-[1%] top-[7%] z-20 w-[31%] rotate-3 sm:right-0">
               <img
                 src={JB5}
-                alt="Portrait"
-                className="w-full h-full object-cover brightness-75"
+                alt="Portrait of the artist"
+                className="aspect-[3/4] w-full border-4 border-[#faf9f6] object-cover"
+                loading="lazy"
               />
-            </div>
+            </div> */}
 
-            {/* Background texture image */}
-            <div className="absolute bottom-10 right-10 w-40 opacity-20">
+            {/* Small supporting image */}
+            {/* <div className="absolute bottom-[5%] right-[5%] z-0 hidden w-[25%] opacity-80 sm:block">
               <img
                 src={artist2}
-                alt="Texture"
-                className="w-full object-cover"
+                alt="A detail from the artist's visual collection"
+                className="aspect-square w-full object-cover"
+                loading="lazy"
               />
+            </div> */}
+
+            {/* Decorative background image */}
+            {/* <div className="pointer-events-none absolute -left-12 -top-10 -z-10 hidden h-36 w-36 opacity-[0.08] sm:block">
+              <img
+                src={grad}
+                alt=""
+                aria-hidden="true"
+                className="h-full w-full object-cover grayscale"
+              />
+            </div> */}
+          </div>
+
+          {/* Biography */}
+          <div className="max-w-xl">
+            <p className="mb-5 text-xs uppercase tracking-[0.25em] text-[#8a735c]">
+              Meet JOSEPH BARASA
+            </p>
+
+            <h3 className="font-serif text-3xl font-normal leading-tight tracking-tight sm:text-4xl">
+              GIFTED
+            </h3>
+
+            <div className="mt-7 space-y-5 text-sm leading-8 text-neutral-600 sm:text-base">
+
+              <p>
+                I believe creativity should have a purpose. Through portraiture,
+                contrast, texture, and experimentation, I aim to create pieces
+                that bring character to spaces and connect with the people who
+                experience them.
+              </p>
+
+              <p>
+                Alongside visual art, I explore software development, another
+                way of turning ideas into something tangible. Both disciplines
+                challenge me to think critically, solve problems, and approach
+                creation from different perspectives.
+              </p>
+            </div>
+
+            {/* Personal motto */}
+            <div className="mt-9 border-l-2 border-[#8a735c] pl-5">
+              <p className="font-serif text-xl italic leading-relaxed text-neutral-800 sm:text-2xl">
+                "I paint, so you don't have dull spaces."
+              </p>
+
             </div>
           </div>
         </div>
       </div>
-
-      {/* Ambient lighting */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-white/5 blur-[120px]" />
-      <div className="absolute bottom-0 right-0 w-72 h-72 bg-neutral-700/10 blur-[120px]" />
     </section>
   );
 };
 
-export default About;
+export default AboutMe;

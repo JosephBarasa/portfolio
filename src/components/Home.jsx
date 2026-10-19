@@ -1,119 +1,136 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import VisualArts from './VisualArts';
 import AboutMe from './AboutMe';
-import { Link } from 'react-router-dom';
 
 const Home = () => {
+const [isVisible, setIsVisible] = useState(false);
 
-  const [isVisible, setIsVisible] = useState(false);
+useEffect(() => {
+setIsVisible(true);
+}, []);
 
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
+const handleScrollToCatalogue = () => {
+const element = document.getElementById('catalogue');
 
-  const handleScrollToCatalogue = () => {
-    const el = document.getElementById('catalogue');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
 
-  return (
-    <main className="min-h-screen w-full flex flex-col items-center text-neutral-50 relative overflow-x-hidden">
+if (element) {
+  element.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start',
+  });
+}
 
-      {/* Background accents */}
-      <div className="absolute inset-0 opacity-60 pointer-events-none">
-        <div className="absolute -top-32 -right-16 h-72 w-72 bg-violet-500/20 rounded-full blur-3xl" />
-        <div className="absolute top-1/3 -left-10 h-80 w-80 bg-emerald-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 h-64 w-64 bg-sky-500/10 rounded-full blur-3xl" />
-      </div>
 
-      {/* HERO SECTION */}
-      <section className="min-h-[80vh] w-full flex items-center justify-center px-6 relative">
-        <div
-          className={`page-container flex flex-col items-center text-center mb-24 mt-20 space-y-10 z-10
-            transition-all duration-1000 ease-out transform ${
-              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-            }`}
-        >
-          <div className="space-y-4">
-            <p className="text-xs uppercase tracking-[0.3em] text-neutral-400">
-              JB
-            </p>
+};
 
-            <h1 className="text-[5rem] md:text-[8rem] lg:text-[12rem] font-extrabold tracking-tight leading-[0.9] text-neutral-100">
-              VISUAL ARTIST
-            </h1>
+return ( <main className="w-full overflow-x-hidden">
 
-            <div className="h-px w-20 bg-neutral-500/60 mx-auto"></div>
-          </div>
+  {/* HERO SECTION */}
+  <section className="flex min-h-[75vh] w-full items-center">
+    <div
+      className={`page-container w-full py-24 transition-all duration-1000 ease-out ${
+        isVisible
+          ? 'translate-y-0 opacity-100'
+          : 'translate-y-6 opacity-0'
+      }`}
+    >
+      <div className="mx-auto max-w-5xl">
 
-          {/* buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-4">
+        {/* Introductory label */}
+        <div className="mb-8 flex items-center gap-3">
+          <span className="h-px w-10 bg-[#8a735c]" />
+
+          <p className="text-xs uppercase tracking-[0.25em] text-neutral-500">
+            Software Developer & Visual Artist
+          </p>
+        </div>
+
+        {/* Main heading */}
+        <h1 className="max-w-4xl text-5xl font-normal leading-[1.08] tracking-tight text-neutral-900 sm:text-6xl md:text-7xl lg:text-8xl">
+          For This Little Thing
+          <br />
+
+          <span className="font-serif italic text-[#8a735c]">
+            Of Ours.
+          </span>
+        </h1>
+
+        {/* Supporting introduction */}
+        <div className="mt-8 flex flex-col justify-between gap-8 border-t border-[#e5e2dc] pt-6 md:flex-row md:items-end">
+          <p className="max-w-xl text-base leading-8 text-neutral-600 md:text-lg">
+            A software developer and visual artist exploring the
+            intersection of technology, creativity, and visual
+            storytelling.
+          </p>
+
+          {/* Action buttons */}
+          <div className="flex shrink-0 flex-wrap items-center gap-4">
+            <button
+              type="button"
+              onClick={handleScrollToCatalogue}
+              className="inline-flex items-center gap-3 bg-neutral-900 px-6 py-3 text-sm text-white transition-colors hover:bg-neutral-700"
+            >
+              Explore My Work
+
+              <span aria-hidden="true">↘</span>
+            </button>
+
             <Link
               to="/contact-me"
-              className="px-8 py-3 rounded-full border border-neutral-200 bg-neutral-100 text-neutral-900 text-sm font-medium hover:bg-white transition-all"
+              className="inline-flex items-center border-b border-neutral-400 py-3 text-sm text-neutral-700 transition-colors hover:border-neutral-900 hover:text-neutral-950"
             >
               Get In Touch
             </Link>
-
-            <button
-              onClick={handleScrollToCatalogue}
-              className="px-7 py-2.5 rounded-full border border-neutral-700 text-sm text-neutral-200 hover:bg-neutral-800/60 transition-colors"
-            >
-              View Catalogue
-            </button>
-          </div>
-
-          {/* Socials */}
-          <div className="flex justify-center space-x-4 mt-4">
-            {/* keep your icons unchanged */}
           </div>
         </div>
-      </section>
 
-      {/* PROJECT CATALOGUE SECTION */}
-      <section
-        id="catalogue"
-        className="w-full scroll-mt-20 py-24 bg-neutral-950 text-white relative"
-      >
-        {/* subtle background */}
-        <div className="absolute inset-0 opacity-40 pointer-events-none">
-          <div className="absolute top-10 left-1/4 h-40 w-40 bg-neutral-700/30 rounded-full blur-3xl" />
-          <div className="absolute bottom-10 right-1/4 h-52 w-52 bg-neutral-800/40 rounded-full blur-3xl" />
+      </div>
+    </div>
+  </section>
+
+  {/* PROJECT CATALOGUE SECTION */}
+  <section
+    id="catalogue"
+    className="w-full scroll-mt-24 border-t border-[#e5e2dc] bg-white py-24 md:py-32"
+  >
+    <div className="page-container">
+
+      {/* Catalogue heading */}
+      <div className="mb-14 flex flex-col justify-between gap-5 md:mb-20 md:flex-row md:items-end">
+        <div>
+          <p className="mb-4 text-xs uppercase tracking-[0.25em] text-neutral-500">
+            Selected work
+          </p>
+
+          <h2 className="text-4xl font-normal tracking-tight text-neutral-900 md:text-6xl">
+            The Catalogue
+          </h2>
         </div>
 
-        <div className="page-container relative z-10">
-          
-          {/* Header */}
-          <div className="text-center mb-16">
-            <p className="text-xs uppercase tracking-[0.3em] text-neutral-500">
-              Catalogue
-            </p>
-            <h2 className="text-3xl md:text-5xl font-light text-white mt-2">
-              The Art
-            </h2>
-            <p className="mt-4 text-sm text-neutral-400 max-w-md mx-auto">
-              Work defined by constant evolution.
-            </p>
-          </div>
+        <p className="max-w-sm text-sm leading-7 text-neutral-500 md:text-base">
+          A collection of creative explorations, original artwork,
+          and ideas brought to life.
+        </p>
+      </div>
 
-          {/* ART DISPLAY */}
-          <div className="max-w-3xl mx-auto">
-            <div className="rounded-3xl border border-neutral-800 bg-neutral-900/60 backdrop-blur-md shadow-[0_20px_60px_rgba(0,0,0,0.6)] p-6">
-              <VisualArts />
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Artwork display */}
+      <VisualArts />
 
-      {/* ABOUT ARTIST SECTION */}
-      <section id="about" className="w-full scroll-mt-20">
-        <AboutMe />
-      </section>
+    </div>
+  </section>
 
-    </main>
-  );
+  {/* ABOUT SECTION */}
+  <section
+    id="about"
+    className="w-full scroll-mt-24 border-t border-[#e5e2dc]"
+  >
+    <AboutMe />
+  </section>
+
+</main>
+
+);
 };
 
 export default Home;
