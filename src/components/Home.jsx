@@ -100,11 +100,11 @@ return ( <main className="w-full overflow-x-hidden">
       <div className="mb-14 flex flex-col justify-between gap-5 md:mb-20 md:flex-row md:items-end">
         <div>
           <p className="mb-4 text-xs uppercase tracking-[0.25em] text-neutral-500">
-            Selected work
+            Catalogue
           </p>
 
           <h2 className="text-4xl font-normal tracking-tight text-neutral-900 md:text-6xl">
-            The Catalogue
+            The Collection
           </h2>
         </div>
 

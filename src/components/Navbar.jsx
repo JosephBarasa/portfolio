@@ -66,9 +66,9 @@ aria-label="Return to homepage"
            className="h-10 w-10 rounded-full border border-[#e5e2dc] object-cover"
          />
 
-        <span className="text-sm font-medium tracking-wide text-neutral-900">
+        {/* <span className="text-sm font-medium tracking-wide text-neutral-900">
           JB
-        </span>
+        </span> */}
       </Link>
 
       {/* Desktop navigation */}

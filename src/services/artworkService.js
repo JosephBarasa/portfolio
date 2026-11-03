@@ -49,5 +49,5 @@ export const getArtworkById = async (id) => {
     return {
         ...artwork,
         image: artworkImages[artwork.id] ?? null,
-    };  
+    };
 };
