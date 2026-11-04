@@ -25,23 +25,6 @@ app.use(express.json());
 //register artwork routes
 app.use("/api/artworks", artworkRoutes);
 
-
-// TEMPORARY: remove after debugging
-app.get("/api/debug-env", (_req, res) => {
-    const url = process.env.DATABASE_URL;
-    let parsedPort: string | null = null;
-    try {
-        parsedPort = url ? new URL(url).port : null;
-    } catch {
-        parsedPort = "unparseable";
-    }
-    res.json({
-        onVercel: Boolean(process.env.VERCEL),
-        hasDatabaseUrl: Boolean(url),
-        parsedPort,
-    });
-});
-
 // catch any error thrown inside routes and respond cleanly
 app.use(
     (

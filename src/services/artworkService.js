@@ -4,7 +4,7 @@ import stillLife from "../assets/art/stillLife.jpg";
 import littleGrebe from "../assets/art/littleGrebe.jpg";
 
 
-const API_URL = "http://localhost:5000/api/artworks";
+const API_URL = `${import.meta.env.VITE_API_URL}/api/artworks`;
 
 
 //match artworks to the imported images using the db id
